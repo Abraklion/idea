@@ -1,0 +1,35 @@
+
+//-----===== Служебные классы ====-----//
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  padding: 0;
+
+  border: 0;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  clip-path: inset(100%);
+  clip: rect(0, 0, 0, 0);
+}
+
+.clip {
+  display: block;
+  width: 100%;
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}

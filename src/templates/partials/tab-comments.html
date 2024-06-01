@@ -1,0 +1,77 @@
+
+<li class="aTabs__content">
+
+  <section class="aIdea__comments">
+    <h3 class="visually-hidden">Комментарии</h3>
+
+    <div class="aComment">
+
+      <div class="aComment__avatar">
+        <img class="aComment__img" src="assets/img/circle.svg" width="32" height="32" alt="">
+      </div>
+
+      <article class="aComment__body">
+
+        <header class="aComment__header">
+          <h4 class="aComment__author">
+            <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+          </h4>
+          <div class="aComment__like">
+            <div class="aComment__like-click" title="Нравится"></div>
+            <div class="aComment__like-count">0</div>
+          </div>
+        </header>
+
+        <div class="aComment__content">
+          Комментарий от Ильдара
+        </div>
+
+        <ul class="aComment__files">
+          <li class="aComment__file">
+            <a class="aComment__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
+          </li>
+          <li class="aComment__file">
+            <a class="aComment__file-link" href="">Снимок экрана 53.png</a>
+          </li>
+        </ul>
+
+        <footer class="aComment__footer">
+          <time class="aComment__date">27.05.2024 16:30:22</time>
+          <ul class="aComment__options">
+            <li class="aComment__item">
+              <a class="aComment__link" href="">Редактировать</a>
+            </li>
+            <li class="aComment__item">
+              <a class="aComment__link" href="">Удалить</a>
+            </li>
+          </ul>
+        </footer>
+
+      </article>
+    </div><!--./comment-->
+
+  </section><!--./aIdea__comments-->
+
+  <form action="" class="aIdea__comments-add aForm">
+
+    <div class="aForm__inner">
+
+      <div class="aForm__item aForm__item--6">
+        <label class="aForm__label" for="comment">Оставить комментарий</label>
+        <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+      </div><!--./aForm__item-->
+
+      <div class="aForm__item aForm__item--6">
+        <label class="aForm__label" for="files">Прикрепить файл</label>
+        <input class="aForm__input js-datepicker" type="file" name="files" id="files">
+      </div><!--./aForm__item-->
+
+      <div class="aForm__item">
+        <button class="aForm__button aBtn" type="submit">Отправить</button>
+      </div><!--./aForm__item-->
+
+    </div><!--./aForm__inner-->
+
+  </form><!--./aIdea__comments-add-->
+
+</li><!--./aTabs__content-->

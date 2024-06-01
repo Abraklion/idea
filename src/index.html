@@ -1,0 +1,69 @@
+---
+layout: default
+
+title: Заготовка
+description: Описание
+
+link: style.min.css
+script: ['main.js']
+
+lottiePlayer: false
+---
+
+<div class="skeleton">
+
+  <div class="skeleton__left">
+
+  </div><!--./frame__left-->
+
+  <div class="skeleton__content">
+    <div class="skeleton__title">Все идеи</div>
+
+    <div class="aFrame">
+
+      <div class="aFrame__main aMain">
+        <h1 class="visually-hidden">Идеи</h1>
+
+        <!-- Фильтр -->
+        {{> filter}}
+
+        <!-- Поиск -->
+        {{> search}}
+
+        <!-- Опции -->
+        {{> options}}
+
+        <!-- Тело -->
+        {{> content}}
+
+        <button class="aUpload aBtn">
+          <img class="aUpload__img" src="assets/img/upload-icon.svg" width="20" height="20" alt="" aria-hidden="true">
+          Показать еще
+        </button>
+
+      </div><!--./aMain-->
+
+      <aside class="aFrame__widget aWidget">
+        <h2 class="visually-hidden">Виджеты</h2>
+
+        <ul class="aWidget__grid">
+
+          <li class="aWidget__row">
+
+            <h3 class="aWidget__heading">Статистика</h3>
+
+            <!-- Виджет - Статистика -->
+            {{> widget-statistics}}
+
+          </li><!--./aWidget__row-->
+
+        </ul><!--./aWidget__grid-->
+
+      </aside><!--./aWidget-->
+
+    </div><!--./aFrame-->
+
+  </div><!--./skeleton__content-->
+
+</div><!--./skeleton-->
+
