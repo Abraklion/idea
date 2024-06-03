@@ -1,0 +1,8 @@
+@use "../variables" as v;
+@use "../library/sumbiot/general/mixins/components/modal" as mM;
+
+@include mM.modal(v.$container,v.$orientation);
+
+.aModal {
+  display: block;
+}

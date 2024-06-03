@@ -1,70 +1,80 @@
+<section class="aMain__filter aModal aModal--filter" style="display: none" id="modal-filter" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
-<section class="aMain__filter aForm" id="aFilter">
-  <h3 class="aForm__title">Фильтр</h3>
+  <h2 class="aModal__title">Фильтр</h2>
 
-  <form class="aForm__inner">
+  <div class="aModal__inner">
 
-    <div class="aForm__item aForm__item--column-6">
-      <label class="aForm__label" for="category">Категория</label>
-      <select class="aForm__select js-select2" name="category" id="category" required>
-        <option value=""></option>
-        <option value="">Безапасность</option>
-        <option value="">Качество</option>
-        <option value="">Порядок</option>
-        <option value="">Производительность процессов</option>
-        <option value="">Производительность труда</option>
-        <option value="">Энергоэффективность</option>
-        <option value="">Другие идеи</option>
-      </select>
-    </div><!--./aForm__item-->
+    <form class="aForm" id="form-filter" method="POST">
 
-    <div class="aForm__item aForm__item--column-6">
-      <label class="aForm__label" for="division">Дивизион</label>
-      <select class="aForm__select js-select2" name="division" id="division" required>
-        <option value=""></option>
-        <option value="">ООО "ОЗНА-Диджитал солюшнс"</option>
-        <option value="">АО "ОЗНА-ИС"</option>
-        <option value="">АО "АК ОЗНА"</option>
-        <option value="">ООО "НПП ОЗНА-Инжиниринг"</option>
-        <option value="">ООО "ОЗНА ТОиР"</option>
-        <option value="">ООО "ОЗНА-Логистика"</option>
-        <option value="">ОЗНА-Профи</option>
-      </select>
-    </div><!--./aForm__item-->
+      <div class="aForm__inner">
 
-    <div class="aForm__item aForm__item--column-6">
-      <label class="aForm__label" for="date-start">Дата от</label>
-      <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-start" placeholder="00.00.0000" autocomplete="off" required>
-    </div><!--./aForm__item-->
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="category">Категория</label>
+          <select class="aForm__select js-select2" name="category" id="category" required>
+            <option value=""></option>
+            <option value="">Безапасность</option>
+            <option value="">Качество</option>
+            <option value="">Порядок</option>
+            <option value="">Производительность процессов</option>
+            <option value="">Производительность труда</option>
+            <option value="">Энергоэффективность</option>
+            <option value="">Другие идеи</option>
+          </select>
+        </div><!--./aForm__item-->
 
-    <div class="aForm__item aForm__item--column-6">
-      <label class="aForm__label" for="date-end">Дата до</label>
-      <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-end" placeholder="00.00.0000" autocomplete="off"  required>
-    </div><!--./aForm__item-->
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="division">Дивизион</label>
+          <select class="aForm__select js-select2" name="division" id="division" required>
+            <option value=""></option>
+            <option value="">ООО "ОЗНА-Диджитал солюшнс"</option>
+            <option value="">АО "ОЗНА-ИС"</option>
+            <option value="">АО "АК ОЗНА"</option>
+            <option value="">ООО "НПП ОЗНА-Инжиниринг"</option>
+            <option value="">ООО "ОЗНА ТОиР"</option>
+            <option value="">ООО "ОЗНА-Логистика"</option>
+            <option value="">ОЗНА-Профи</option>
+          </select>
+        </div><!--./aForm__item-->
 
-    <div class="aForm__item aForm__item--column-6">
-      <label class="aForm__label" for="status">Статус</label>
-      <select class="aForm__select js-select2" name="status" id="status" required>
-        <option value=""></option>
-        <option value="">Новая</option>
-        <option value="">В работе</option>
-        <option value="">Внедрено</option>
-        <option value="">Отклонено</option>
-        <option value="">На доработку</option>
-        <option value="">Просрочено</option>
-        <option value="">Расчет эффективности</option>
-        <option value="">На рассмотрении</option>
-      </select>
-    </div><!--./aForm__item-->
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="date-start">Дата от</label>
+          <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-start" placeholder="00.00.0000" autocomplete="off" required>
+        </div><!--./aForm__item-->
 
-    <div class="aForm__item aForm__item--column-3">
-      <button class="aForm__button aBtn" type="submit">Применить</button>
-    </div><!--./aForm__item-->
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="date-end">Дата до</label>
+          <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-end" placeholder="00.00.0000" autocomplete="off"  required>
+        </div><!--./aForm__item-->
 
-    <div class="aForm__item aForm__item--column-3">
-      <button class="aForm__button aBtn" type="reset">Сбросить фильтр</button>
-    </div><!--./aForm__item-->
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="status">Статус</label>
+          <select class="aForm__select js-select2" name="status" id="status" required>
+            <option value=""></option>
+            <option value="">Новая</option>
+            <option value="">В работе</option>
+            <option value="">Внедрено</option>
+            <option value="">Отклонено</option>
+            <option value="">На доработку</option>
+            <option value="">Просрочено</option>
+            <option value="">Расчет эффективности</option>
+            <option value="">На рассмотрении</option>
+          </select>
+        </div><!--./aForm__item-->
 
-  </form><!--./aForm__inner-->
+        <div class="aForm__item aForm__item--column-3">
+          <button class="aForm__button aBtn" type="submit">Применить</button>
+        </div><!--./aForm__item-->
 
-</section><!--./aMain__filter-->
+        <div class="aForm__item aForm__item--column-3">
+          <button class="aForm__button aBtn" type="reset">Сбросить фильтр</button>
+        </div><!--./aForm__item-->
+
+      </div><!--./aForm__inner-->
+
+    </form><!--./aForm-->
+
+  </div><!--./modal__inner-->
+
+  <button type="button" class="aModal__close" data-sumbiot-modal-close title="Закрыть окно"></button>
+
+</section><!--./aModal-->

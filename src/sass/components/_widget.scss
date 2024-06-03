@@ -1,25 +1,23 @@
 
 .aWidget {
-  background-color: rgba(#54A3ED, 0.1);
+  background-color: rgba(#54A3ED, 0.03);
 
   border: 1px solid rgba(#184A78, 0.1);
 }
 
 .aWidget__grid {
   margin: 0;
-  padding: 24px 0;
+  padding: 24px 16px;
   list-style: none;
 }
 
 .aWidget__row {
-
+  margin-bottom: 24px;
 }
 
 .aWidget__heading {
-  margin: 0 -1px 16px -1px;
   padding: 8px 16px;
-
-  position: relative;
+  margin: 0 0 24px 0;
 
   background-color: #F9FCFE;
 
@@ -31,21 +29,4 @@
   border: 1px solid rgba(#184A78, 0.5);
 
   color: #184A78;
-
-  &::after {
-    content: '';
-
-    position: absolute;
-    top: -1px;
-    right: -15px;
-
-    width: 15px;
-    height: calc(100% + 2px);
-
-    background-color: #89A3BB;
-  }
-}
-
-.aWidget__item {
-  margin: 0 16px;
 }

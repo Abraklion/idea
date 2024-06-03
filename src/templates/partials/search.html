@@ -1,18 +1,28 @@
+<section class="aMain__search aModal aModal--search" style="display: none" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
-<section class="aMain__search aForm" id="aSearch">
-  <h3 class="aForm__title">Поиск</h3>
+  <h2 class="aModal__title">Поиск</h2>
 
-  <div class="aForm__inner">
+  <div class="aModal__inner">
 
-    <div class="aForm__item aForm__item--10">
-      <label class="visually-hidden" for="search">Найти</label>
-      <input class="aForm__input" type="text" name="search" id="search" placeholder="Введите название идеи" autocomplete="off" required>
-    </div><!--./aForm__item-->
+    <form class="aForm" id="form-search" method="POST">
 
-    <div class="aForm__item aForm__item--2">
-      <button class="aForm__button" type="submit">Найти</button>
-    </div><!--./aForm__item-->
+      <div class="aForm__inner">
 
-  </div><!--./aForm__inner-->
+        <div class="aForm__item aForm__item--column-10">
+          <label class="visually-hidden" for="search">Найти</label>
+          <input class="aForm__input" type="text" name="search" id="search" placeholder="Введите название идеи" autocomplete="off" required>
+        </div><!--./aForm__item-->
 
-</section><!--./aMain__search-->
+        <div class="aForm__item aForm__item--column-2">
+          <button class="aForm__button aBtn" type="submit">Найти</button>
+        </div><!--./aForm__item-->
+
+      </div><!--./aForm__inner-->
+
+    </form><!--./aForm-->
+
+  </div><!--./modal__inner-->
+
+  <button type="button" class="aModal__close" data-sumbiot-modal-close title="Закрыть окно"></button>
+
+</section><!--./modal-->

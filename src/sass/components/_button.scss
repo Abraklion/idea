@@ -1,4 +1,105 @@
 @use "../variables" as v;
 @use "../library/sumbiot/general/mixins/components/button" as mB;
 
+@use "sass:color";
+
 @include mB.button();
+
+.aBtn {
+  padding: 10px 32px;
+
+  background-color: #184A78;
+
+  font-size: 13px;
+
+  line-height: 13px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border: 1px solid rgba(#000, 0.2);
+  border-radius: 2px;
+
+  &:hover {
+    background-color: color.scale(#184A78, $lightness: 20%);
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #184A78;
+    color: #fff;
+  }
+
+  &--green {
+    background-color: #38804C;
+
+    &:hover {
+      background-color: color.scale(#38804C, $lightness: 10%);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: #38804C;
+      color: #fff;
+    }
+  }
+
+  &--icon {
+    padding: 8px;
+
+    background-color: #fff;
+
+    box-shadow: none;
+
+    &:hover {
+      background-color: #fff;
+
+      box-shadow: inset 2px 2px 2px 0 rgba(#000, 0.05),
+      inset -2px -2px 2px 0 rgba(#000, 0.05);
+
+      .aBtn__img {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      background-color: #fff;
+      color: #fff;
+
+      box-shadow: none;
+
+      .aBtn__img {
+        opacity: 0.8;
+      }
+    }
+
+    .aBtn__img {
+      opacity: 0.8;
+    }
+  }
+
+  &--tab {
+    padding: 6px 12px;
+
+    background-color: #fff;
+
+    color: #184A78;
+
+    transition: all 0.1s ease;
+
+    &.active {
+      background-color: #184A78;
+
+      color: #fff;
+    }
+  }
+
+}
+
+.aBtn__img {
+  display: block;
+
+  width: 16px;
+  height: 16px;
+}

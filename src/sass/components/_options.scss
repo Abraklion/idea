@@ -1,14 +1,44 @@
 
 .aOptions {
 
+  &:after {
+    content: '';
+
+   display: block;
+
+    border-bottom: 1px solid rgba(#000, 0.03);
+  }
 }
 
 .aOptions__inner {
+  display: grid;
 
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 15px 16px;
+  margin-bottom: 24px;
+
+  background-color: rgba(#54A3ED, 0.03);
+
+  border: 1px solid rgba(#000, 0.1);
+
+  border-radius: 2px;
 }
 
 .aOptions__list {
+  display: flex;
+  grid-column-gap: 16px;
 
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &--column-gap-12 {
+    grid-column-gap: 12px;
+  }
 }
 
 .aOptions__item {
@@ -20,9 +50,5 @@
 }
 
 .aOptions__button {
-
-}
-
-.aOptions__img {
 
 }

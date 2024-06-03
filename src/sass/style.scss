@@ -18,6 +18,7 @@
 // Блоки
 //@use "components/loader";
 @use "components/button";
+@use "components/modal";
 @use "components/form";
 
 @use "components/skeleton";
@@ -28,6 +29,7 @@
 @use "components/comment";
 @use "components/tabs";
 @use "components/idea";
+@use "components/upload";
 
 @use "components/statistics";
 @use "components/widget";

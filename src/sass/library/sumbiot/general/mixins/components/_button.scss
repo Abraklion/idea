@@ -132,15 +132,6 @@
     color: $txt-color;
   }
 
-  &:focus {
-    @media (min-width: 992px) {
-      background-color: color.scale($bg-color, $lightness: -10%);
-      color: $txt-color;
-
-      box-shadow: 0 0 0 5px color.scale($bg-color, $lightness: 70%);
-    }
-  }
-
   &:active {
     background-color: $bg-color;
     color: $txt-color;

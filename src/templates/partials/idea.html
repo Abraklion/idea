@@ -4,11 +4,11 @@
   <header class="aIdea__header">
     <div class="aIdea__top-panel">
 
-      <div class=aIdea__author">
+      <div class="aIdea__author">
         Предложил:
         <div class="aIdea__author-inner">
           <div class="aIdea__author-avatar">
-            <img class="aIdea__author-img" src="assets/img/circle.svg" width="32" height="32" alt="">
+            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
           </div>
           <div class="aIdea__author-info">
             <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
@@ -18,8 +18,8 @@
       </div><!--./aIdea__author-->
 
       <div class="aIdea__status">
-        <mark class="aIdea__status-name">Новый</mark>
-        <button class="aIdea__status-like aBtn">
+        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+        <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
           <span class="visually-hidden">Нравиться</span>
         </button>
       </div><!--./aIdea__status-->
@@ -32,12 +32,24 @@
   <div class="aIdea__content">
 
     <div class="aTabs">
-      <ul class="aTabs__header">
-        <li class="aTabs__item">Идея</li>
-        <li class="aTabs__item">Участники</li>
-        <li class="aTabs__item">Комментарии (3)</li>
-        <li class="aTabs__item">Файлы (5)</li>
-      </ul><!--./aTabs__header-->
+      <div class="aTabs__inner">
+
+        <ul class="aTabs__header">
+          <li class="aTabs__item">
+            <button class="aBtn aBtn--tab">Идея</button>
+          </li>
+          <li class="aTabs__item">
+            <button class="aBtn aBtn--tab">Участники</button>
+          </li>
+          <li class="aTabs__item">
+            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+          </li>
+          <li class="aTabs__item">
+            <button class="aBtn aBtn--tab">Файлы (5)</button>
+          </li>
+        </ul><!--./aTabs__header-->
+
+      </div>
 
       <ul class="aTabs__container">
 
@@ -59,7 +71,7 @@
   </div><!--./aIdea__content-->
 
   <footer class="aIdea__footer">
-    <ul class="aIdea__footer-list">
+    <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
       <li class="aIdea__footer-item">Категория: Безопасность</li>
       <li class="aIdea__footer-item">Рейтинг: 10</li>
     </ul><!--./aIdea__footer-list-->
