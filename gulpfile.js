@@ -34,15 +34,15 @@ global.$ = {
       other: 'src/assets/other/'
     },
     output: {
-      path: 'dist',
-      pathCss: 'dist/assets/css/',
-      pathJs: 'dist/js/',
+      path: 'docs',
+      pathCss: 'docs/assets/css/',
+      pathJs: 'docs/js/',
       pathImg: {
-        img: 'dist/assets/img/',
-        svg: 'dist/assets/img/sprite/',
-        lottie: 'dist/assets/img/lottie/'
+        img: 'docs/assets/img/',
+        svg: 'docs/assets/img/sprite/',
+        lottie: 'docs/assets/img/lottie/'
       },
-      pathFonts: 'dist/assets/fonts/',
+      pathFonts: 'docs/assets/fonts/',
       templates: '../templates/.default/',
     },
     watch: {
@@ -65,10 +65,10 @@ $.config.src.forEach(function (path) {
   require(path)();
 });
 
-const build = $.gulp.series('clean', $.gulp.parallel('html','styles','scripts','fonts','images','sprite','copy'));
-const watch = $.gulp.series(build, $.gulp.parallel('serve', 'watcher'));
+let build = $.gulp.series('clean', $.gulp.parallel('html','styles','scripts','fonts','images','sprite','copy'));
+let watch = $.gulp.series(build, $.gulp.parallel('serve', 'watcher'));
 
-const bx_watch = $.gulp.series(build, 'copyTopLevel', $.gulp.parallel('watcher','watcher_dist'));
+let bx_watch = $.gulp.series(build, 'copyTopLevel', $.gulp.parallel('watcher','watcher_dist'));
 
 exports.build = build;
 exports.watch = watch;
