@@ -20,8 +20,10 @@
 @use "components/button";
 @use "components/modal";
 @use "components/form";
+@use "components/animated";
 
-@use "components/skeleton";
+//@use "components/skeleton";
+@use "components/title";
 @use "components/frame";
 @use "components/main";
 @use "components/options";

@@ -15,6 +15,7 @@
 
   <link rel="stylesheet" href="assets/css/style.min.css">
 
+  <script defer src="js/runtime.js"></script>
   <script defer src="js/main.js"></script>
 </head>
 
@@ -27,15 +28,20 @@
     </div><!--./frame__left-->
 
     <div class="skeleton__content">
-      <div class="skeleton__title">Все идеи</div>
+      <div class="aTitle">
+        <h1 class="aTitle__head">Бережливое производство</h1>
+        <i class="aTitle__slogan">
+          Есть идея?
+          <img src="assets/img/lamp-icon.svg" width="22" height="22" alt="">
+          Поделись с компанией!
+        </i>
+      </div>
 
       <div class="aFrame">
 
         <div class="aFrame__main aMain">
-          <h1 class="visually-hidden">Идеи</h1>
 
           <!-- Опции -->
-
           <section class="aMain__options aOptions" id="aOptions">
             <h3 class="visually-hidden">Настройки</h3>
 
@@ -52,12 +58,12 @@
 
               <ul class="aOptions__list aOptions__list--column-gap-12">
                 <li class="aOptions__item">
-                  <button class="aOptions__button aBtn aBtn--icon" title="Поиск">
+                  <button class="aOptions__button aBtn aBtn--icon js-search-modal" title="Поиск">
                     <img class="aBtn__img" src="assets/img/search-new-icon.svg" width="16" height="16" alt="" aria-hidden="true">
                   </button>
                 </li>
                 <li class="aOptions__item">
-                  <button class="aOptions__button aBtn aBtn--icon" title="Фильтр">
+                  <button class="aOptions__button aBtn aBtn--icon js-filter-modal" title="Фильтр">
                     <img class="aBtn__img" src="assets/img/filter-icon.svg" width="16" height="16" alt="" aria-hidden="true">
                   </button>
                 </li>
@@ -68,7 +74,7 @@
           </section><!--./aMain__options-->
 
           <!-- Фильтр -->
-          <section class="aMain__filter aModal aModal--filter" style="display: none" id="modal-filter" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
+          <section class="aMain__filter aModal" id="modal-filter" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
             <h2 class="aModal__title">Фильтр</h2>
 
@@ -77,20 +83,6 @@
               <form class="aForm" id="form-filter" method="POST">
 
                 <div class="aForm__inner">
-
-                  <div class="aForm__item aForm__item--column-6">
-                    <label class="aForm__label" for="category">Категория</label>
-                    <select class="aForm__select js-select2" name="category" id="category" required>
-                      <option value=""></option>
-                      <option value="">Безапасность</option>
-                      <option value="">Качество</option>
-                      <option value="">Порядок</option>
-                      <option value="">Производительность процессов</option>
-                      <option value="">Производительность труда</option>
-                      <option value="">Энергоэффективность</option>
-                      <option value="">Другие идеи</option>
-                    </select>
-                  </div><!--./aForm__item-->
 
                   <div class="aForm__item aForm__item--column-6">
                     <label class="aForm__label" for="division">Дивизион</label>
@@ -107,11 +99,25 @@
                   </div><!--./aForm__item-->
 
                   <div class="aForm__item aForm__item--column-6">
+                    <label class="aForm__label" for="category">Категория</label>
+                    <select class="aForm__select js-select2" name="category" id="category" required>
+                      <option value=""></option>
+                      <option value="">Безапасность</option>
+                      <option value="">Качество</option>
+                      <option value="">Порядок</option>
+                      <option value="">Производительность процессов</option>
+                      <option value="">Производительность труда</option>
+                      <option value="">Энергоэффективность</option>
+                      <option value="">Другие идеи</option>
+                    </select>
+                  </div><!--./aForm__item-->
+
+                  <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
                     <label class="aForm__label" for="date-start">Дата от</label>
                     <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-start" placeholder="00.00.0000" autocomplete="off" required>
                   </div><!--./aForm__item-->
 
-                  <div class="aForm__item aForm__item--column-6">
+                  <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
                     <label class="aForm__label" for="date-end">Дата до</label>
                     <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-end" placeholder="00.00.0000" autocomplete="off" required>
                   </div><!--./aForm__item-->
@@ -131,12 +137,12 @@
                     </select>
                   </div><!--./aForm__item-->
 
-                  <div class="aForm__item aForm__item--column-3">
+                  <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
                     <button class="aForm__button aBtn" type="submit">Применить</button>
                   </div><!--./aForm__item-->
 
-                  <div class="aForm__item aForm__item--column-3">
-                    <button class="aForm__button aBtn" type="reset">Сбросить фильтр</button>
+                  <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
+                    <button class="aForm__button aBtn aBtn--white" type="reset">Сбросить</button>
                   </div><!--./aForm__item-->
 
                 </div><!--./aForm__inner-->
@@ -150,7 +156,7 @@
           </section><!--./aModal-->
 
           <!-- Поиск -->
-          <section class="aMain__search aModal aModal--search" style="display: none" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
+          <section class="aMain__search aModal" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
             <h2 class="aModal__title">Поиск</h2>
 
@@ -180,7 +186,6 @@
           </section><!--./modal-->
 
           <!-- Тело -->
-
           <section class="aMain__content aContent" id="aContent">
             <h1 class="visually-hidden">Список идей</h1>
 
@@ -189,7 +194,6 @@
               <li class="aContent__item">
 
                 <!-- Идея -->
-
                 <article class="aIdea">
 
                   <header class="aIdea__header">
@@ -199,25 +203,29 @@
                         Предложил:
                         <div class="aIdea__author-inner">
                           <div class="aIdea__author-avatar">
-                            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                            <img class="aIdea__author-img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                           </div>
                           <div class="aIdea__author-info">
-                            <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
+                            <strong class="aIdea__author-name">
+                              <a href="">Кузнецов Николай</a>
+                            </strong>
                             <time class="aIdea__author-date">27.05.2024 16:30:22</time>
                           </div>
                         </div>
                       </div><!--./aIdea__author-->
 
                       <div class="aIdea__status">
-                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Расчет эффективности</mark>
                         <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
-                          <span class="visually-hidden">Нравиться</span>
+                          <span title="Рейтинг">10</span>
                         </button>
                       </div><!--./aIdea__status-->
 
                     </div><!--./aIdea__top-panel-->
 
-                    <h2 class="aIdea__header-title">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</h2>
+                    <h2 class="aIdea__header-title">
+                      <a href="">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</a>
+                    </h2>
                   </header><!--./aIdea__header-->
 
                   <div class="aIdea__content">
@@ -227,16 +235,22 @@
 
                         <ul class="aTabs__header">
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Идея</button>
+                            <button class="aBtn aBtn--tab active">Идея</button>
                           </li>
                           <li class="aTabs__item">
                             <button class="aBtn aBtn--tab">Участники</button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+                            <button class="aBtn aBtn--tab">
+                              Комментарии
+                              <span>(3)</span>
+                            </button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Файлы (5)</button>
+                            <button class="aBtn aBtn--tab">
+                              Файлы
+                              <span>(5)</span>
+                            </button>
                           </li>
                         </ul><!--./aTabs__header-->
 
@@ -246,7 +260,7 @@
 
                         <!-- Таб - Идея -->
 
-                        <li class="aTabs__content aTabs__content--idea" style="display: none">
+                        <li class="aTabs__content">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Проблема:</strong>
@@ -270,10 +284,16 @@
 
                           <hr>
 
-                          <div class="aIdea__box">
-                            <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый экономический эффект:</strong>
-                            <span class="aIdea__value">32 400 ₽</span>
-                          </div><!--./aIdea__box-->
+                          <div class="aIdea__grid">
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">32 400 ₽</span>
+                            </div><!--./aIdea__box-->
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Фактический <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">? ₽</span>
+                            </div><!--./aIdea__box-->
+                          </div>
 
                         </li><!--./aTabs__content-->
 
@@ -285,7 +305,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Автор идеи:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                             <hr>
@@ -315,7 +335,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Руководитель автора:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -324,8 +344,8 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Соавторы идеи:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>,
-                              <a class="aIdea__link" href="">Арслангалин Вадим Ринатович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>,
+                              <a class="aIdea__link" href="">Арслангалин Вадим</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -333,8 +353,8 @@
                           <div class="aIdea__container">
 
                             <div class="aIdea__box">
-                              <strong class="aIdea__label aIdea__label--mb-0">Исполнитель:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <strong class="aIdea__label aIdea__label--mb-0">Исполнители:</strong>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -343,7 +363,7 @@
 
                         <!-- Таб - Комментарии -->
 
-                        <li class="aTabs__content aTabs__content--comments">
+                        <li class="aTabs__content" style="display: none">
 
                           <section class="aIdea__comments">
                             <h3 class="visually-hidden">Комментарии</h3>
@@ -351,17 +371,17 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
                                   </h4>
                                   <div class="aComment__like">
-                                    <div class="aComment__like-click" title="Нравится"></div>
+                                    <div class="aComment__like-click active" title="Нравится"></div>
                                     <div class="aComment__like-count">0</div>
                                   </div>
                                 </header>
@@ -388,14 +408,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -406,18 +427,6 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
@@ -425,14 +434,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -443,35 +453,23 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
 
                           </section><!--./aIdea__comments-->
 
-                          <form class="aIdea__comments-add aForm" id="form-comment">
+                          <form class="aIdea__comments-add aForm">
 
-                            <div class="aForm__inner">
+                            <div class="aForm__inner aForm__inner--row-gap-12">
 
-                              <div class="aForm__item aForm__item--6">
-                                <label class="aForm__label" for="comment">Оставить комментарий</label>
-                                <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+                              <div class="aForm__item">
+                                <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+                                <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
                               </div><!--./aForm__item-->
 
                               <div class="aForm__item">
-                                <button class="aForm__button aBtn" type="submit">Отправить</button>
+                                <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
                               </div><!--./aForm__item-->
 
                             </div><!--./aForm__inner-->
@@ -482,7 +480,7 @@
 
                         <!-- Таб - Файлы -->
 
-                        <li class="aTabs__content" style="display: none">
+                        <li class="aTabs__content aTabs__content--files" style="display: none">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Фотографии:</strong>
@@ -517,7 +515,7 @@
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Файлы:</strong>
-                            <ul class="aIdea__files">
+                            <ul class="aIdea__files aIdea__files--flex-column">
                               <li class="aIdea__file">
                                 <a class="aIdea__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
                               </li>
@@ -545,8 +543,7 @@
 
                   <footer class="aIdea__footer">
                     <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
-                      <li class="aIdea__footer-item">Категория: Безопасность</li>
-                      <li class="aIdea__footer-item">Рейтинг: 10</li>
+                      <li class="aIdea__footer-item">Категория: Производительность процессов</li>
                     </ul><!--./aIdea__footer-list-->
 
                     <ul class="aIdea__footer-list">
@@ -569,7 +566,6 @@
               <li class="aContent__item">
 
                 <!-- Идея -->
-
                 <article class="aIdea">
 
                   <header class="aIdea__header">
@@ -579,25 +575,29 @@
                         Предложил:
                         <div class="aIdea__author-inner">
                           <div class="aIdea__author-avatar">
-                            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                            <img class="aIdea__author-img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                           </div>
                           <div class="aIdea__author-info">
-                            <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
+                            <strong class="aIdea__author-name">
+                              <a href="">Кузнецов Николай</a>
+                            </strong>
                             <time class="aIdea__author-date">27.05.2024 16:30:22</time>
                           </div>
                         </div>
                       </div><!--./aIdea__author-->
 
                       <div class="aIdea__status">
-                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Расчет эффективности</mark>
                         <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
-                          <span class="visually-hidden">Нравиться</span>
+                          <span title="Рейтинг">10</span>
                         </button>
                       </div><!--./aIdea__status-->
 
                     </div><!--./aIdea__top-panel-->
 
-                    <h2 class="aIdea__header-title">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</h2>
+                    <h2 class="aIdea__header-title">
+                      <a href="">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</a>
+                    </h2>
                   </header><!--./aIdea__header-->
 
                   <div class="aIdea__content">
@@ -607,16 +607,22 @@
 
                         <ul class="aTabs__header">
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Идея</button>
+                            <button class="aBtn aBtn--tab active">Идея</button>
                           </li>
                           <li class="aTabs__item">
                             <button class="aBtn aBtn--tab">Участники</button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+                            <button class="aBtn aBtn--tab">
+                              Комментарии
+                              <span>(3)</span>
+                            </button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Файлы (5)</button>
+                            <button class="aBtn aBtn--tab">
+                              Файлы
+                              <span>(5)</span>
+                            </button>
                           </li>
                         </ul><!--./aTabs__header-->
 
@@ -626,7 +632,7 @@
 
                         <!-- Таб - Идея -->
 
-                        <li class="aTabs__content aTabs__content--idea" style="display: none">
+                        <li class="aTabs__content">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Проблема:</strong>
@@ -650,10 +656,16 @@
 
                           <hr>
 
-                          <div class="aIdea__box">
-                            <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый экономический эффект:</strong>
-                            <span class="aIdea__value">32 400 ₽</span>
-                          </div><!--./aIdea__box-->
+                          <div class="aIdea__grid">
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">32 400 ₽</span>
+                            </div><!--./aIdea__box-->
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Фактический <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">? ₽</span>
+                            </div><!--./aIdea__box-->
+                          </div>
 
                         </li><!--./aTabs__content-->
 
@@ -665,7 +677,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Автор идеи:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                             <hr>
@@ -695,7 +707,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Руководитель автора:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -704,8 +716,8 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Соавторы идеи:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>,
-                              <a class="aIdea__link" href="">Арслангалин Вадим Ринатович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>,
+                              <a class="aIdea__link" href="">Арслангалин Вадим</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -713,8 +725,8 @@
                           <div class="aIdea__container">
 
                             <div class="aIdea__box">
-                              <strong class="aIdea__label aIdea__label--mb-0">Исполнитель:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <strong class="aIdea__label aIdea__label--mb-0">Исполнители:</strong>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -723,7 +735,7 @@
 
                         <!-- Таб - Комментарии -->
 
-                        <li class="aTabs__content aTabs__content--comments">
+                        <li class="aTabs__content" style="display: none">
 
                           <section class="aIdea__comments">
                             <h3 class="visually-hidden">Комментарии</h3>
@@ -731,17 +743,17 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
                                   </h4>
                                   <div class="aComment__like">
-                                    <div class="aComment__like-click" title="Нравится"></div>
+                                    <div class="aComment__like-click active" title="Нравится"></div>
                                     <div class="aComment__like-count">0</div>
                                   </div>
                                 </header>
@@ -768,14 +780,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -786,18 +799,6 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
@@ -805,14 +806,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -823,35 +825,23 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
 
                           </section><!--./aIdea__comments-->
 
-                          <form class="aIdea__comments-add aForm" id="form-comment">
+                          <form class="aIdea__comments-add aForm">
 
-                            <div class="aForm__inner">
+                            <div class="aForm__inner aForm__inner--row-gap-12">
 
-                              <div class="aForm__item aForm__item--6">
-                                <label class="aForm__label" for="comment">Оставить комментарий</label>
-                                <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+                              <div class="aForm__item">
+                                <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+                                <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
                               </div><!--./aForm__item-->
 
                               <div class="aForm__item">
-                                <button class="aForm__button aBtn" type="submit">Отправить</button>
+                                <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
                               </div><!--./aForm__item-->
 
                             </div><!--./aForm__inner-->
@@ -862,7 +852,7 @@
 
                         <!-- Таб - Файлы -->
 
-                        <li class="aTabs__content" style="display: none">
+                        <li class="aTabs__content aTabs__content--files" style="display: none">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Фотографии:</strong>
@@ -897,7 +887,7 @@
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Файлы:</strong>
-                            <ul class="aIdea__files">
+                            <ul class="aIdea__files aIdea__files--flex-column">
                               <li class="aIdea__file">
                                 <a class="aIdea__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
                               </li>
@@ -925,8 +915,7 @@
 
                   <footer class="aIdea__footer">
                     <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
-                      <li class="aIdea__footer-item">Категория: Безопасность</li>
-                      <li class="aIdea__footer-item">Рейтинг: 10</li>
+                      <li class="aIdea__footer-item">Категория: Производительность процессов</li>
                     </ul><!--./aIdea__footer-list-->
 
                     <ul class="aIdea__footer-list">
@@ -949,7 +938,6 @@
               <li class="aContent__item">
 
                 <!-- Идея -->
-
                 <article class="aIdea">
 
                   <header class="aIdea__header">
@@ -959,25 +947,29 @@
                         Предложил:
                         <div class="aIdea__author-inner">
                           <div class="aIdea__author-avatar">
-                            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                            <img class="aIdea__author-img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                           </div>
                           <div class="aIdea__author-info">
-                            <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
+                            <strong class="aIdea__author-name">
+                              <a href="">Кузнецов Николай</a>
+                            </strong>
                             <time class="aIdea__author-date">27.05.2024 16:30:22</time>
                           </div>
                         </div>
                       </div><!--./aIdea__author-->
 
                       <div class="aIdea__status">
-                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Расчет эффективности</mark>
                         <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
-                          <span class="visually-hidden">Нравиться</span>
+                          <span title="Рейтинг">10</span>
                         </button>
                       </div><!--./aIdea__status-->
 
                     </div><!--./aIdea__top-panel-->
 
-                    <h2 class="aIdea__header-title">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</h2>
+                    <h2 class="aIdea__header-title">
+                      <a href="">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</a>
+                    </h2>
                   </header><!--./aIdea__header-->
 
                   <div class="aIdea__content">
@@ -987,16 +979,22 @@
 
                         <ul class="aTabs__header">
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Идея</button>
+                            <button class="aBtn aBtn--tab active">Идея</button>
                           </li>
                           <li class="aTabs__item">
                             <button class="aBtn aBtn--tab">Участники</button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+                            <button class="aBtn aBtn--tab">
+                              Комментарии
+                              <span>(3)</span>
+                            </button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Файлы (5)</button>
+                            <button class="aBtn aBtn--tab">
+                              Файлы
+                              <span>(5)</span>
+                            </button>
                           </li>
                         </ul><!--./aTabs__header-->
 
@@ -1006,7 +1004,7 @@
 
                         <!-- Таб - Идея -->
 
-                        <li class="aTabs__content aTabs__content--idea" style="display: none">
+                        <li class="aTabs__content">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Проблема:</strong>
@@ -1030,10 +1028,16 @@
 
                           <hr>
 
-                          <div class="aIdea__box">
-                            <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый экономический эффект:</strong>
-                            <span class="aIdea__value">32 400 ₽</span>
-                          </div><!--./aIdea__box-->
+                          <div class="aIdea__grid">
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">32 400 ₽</span>
+                            </div><!--./aIdea__box-->
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Фактический <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">? ₽</span>
+                            </div><!--./aIdea__box-->
+                          </div>
 
                         </li><!--./aTabs__content-->
 
@@ -1045,7 +1049,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Автор идеи:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                             <hr>
@@ -1075,7 +1079,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Руководитель автора:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1084,8 +1088,8 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Соавторы идеи:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>,
-                              <a class="aIdea__link" href="">Арслангалин Вадим Ринатович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>,
+                              <a class="aIdea__link" href="">Арслангалин Вадим</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1093,8 +1097,8 @@
                           <div class="aIdea__container">
 
                             <div class="aIdea__box">
-                              <strong class="aIdea__label aIdea__label--mb-0">Исполнитель:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <strong class="aIdea__label aIdea__label--mb-0">Исполнители:</strong>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1103,7 +1107,7 @@
 
                         <!-- Таб - Комментарии -->
 
-                        <li class="aTabs__content aTabs__content--comments">
+                        <li class="aTabs__content" style="display: none">
 
                           <section class="aIdea__comments">
                             <h3 class="visually-hidden">Комментарии</h3>
@@ -1111,17 +1115,17 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
                                   </h4>
                                   <div class="aComment__like">
-                                    <div class="aComment__like-click" title="Нравится"></div>
+                                    <div class="aComment__like-click active" title="Нравится"></div>
                                     <div class="aComment__like-count">0</div>
                                   </div>
                                 </header>
@@ -1148,14 +1152,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1166,18 +1171,6 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
@@ -1185,14 +1178,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1203,35 +1197,23 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
 
                           </section><!--./aIdea__comments-->
 
-                          <form class="aIdea__comments-add aForm" id="form-comment">
+                          <form class="aIdea__comments-add aForm">
 
-                            <div class="aForm__inner">
+                            <div class="aForm__inner aForm__inner--row-gap-12">
 
-                              <div class="aForm__item aForm__item--6">
-                                <label class="aForm__label" for="comment">Оставить комментарий</label>
-                                <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+                              <div class="aForm__item">
+                                <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+                                <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
                               </div><!--./aForm__item-->
 
                               <div class="aForm__item">
-                                <button class="aForm__button aBtn" type="submit">Отправить</button>
+                                <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
                               </div><!--./aForm__item-->
 
                             </div><!--./aForm__inner-->
@@ -1242,7 +1224,7 @@
 
                         <!-- Таб - Файлы -->
 
-                        <li class="aTabs__content" style="display: none">
+                        <li class="aTabs__content aTabs__content--files" style="display: none">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Фотографии:</strong>
@@ -1277,7 +1259,7 @@
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Файлы:</strong>
-                            <ul class="aIdea__files">
+                            <ul class="aIdea__files aIdea__files--flex-column">
                               <li class="aIdea__file">
                                 <a class="aIdea__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
                               </li>
@@ -1305,8 +1287,7 @@
 
                   <footer class="aIdea__footer">
                     <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
-                      <li class="aIdea__footer-item">Категория: Безопасность</li>
-                      <li class="aIdea__footer-item">Рейтинг: 10</li>
+                      <li class="aIdea__footer-item">Категория: Производительность процессов</li>
                     </ul><!--./aIdea__footer-list-->
 
                     <ul class="aIdea__footer-list">
@@ -1329,7 +1310,6 @@
               <li class="aContent__item">
 
                 <!-- Идея -->
-
                 <article class="aIdea">
 
                   <header class="aIdea__header">
@@ -1339,25 +1319,29 @@
                         Предложил:
                         <div class="aIdea__author-inner">
                           <div class="aIdea__author-avatar">
-                            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                            <img class="aIdea__author-img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                           </div>
                           <div class="aIdea__author-info">
-                            <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
+                            <strong class="aIdea__author-name">
+                              <a href="">Кузнецов Николай</a>
+                            </strong>
                             <time class="aIdea__author-date">27.05.2024 16:30:22</time>
                           </div>
                         </div>
                       </div><!--./aIdea__author-->
 
                       <div class="aIdea__status">
-                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Расчет эффективности</mark>
                         <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
-                          <span class="visually-hidden">Нравиться</span>
+                          <span title="Рейтинг">10</span>
                         </button>
                       </div><!--./aIdea__status-->
 
                     </div><!--./aIdea__top-panel-->
 
-                    <h2 class="aIdea__header-title">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</h2>
+                    <h2 class="aIdea__header-title">
+                      <a href="">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</a>
+                    </h2>
                   </header><!--./aIdea__header-->
 
                   <div class="aIdea__content">
@@ -1367,16 +1351,22 @@
 
                         <ul class="aTabs__header">
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Идея</button>
+                            <button class="aBtn aBtn--tab active">Идея</button>
                           </li>
                           <li class="aTabs__item">
                             <button class="aBtn aBtn--tab">Участники</button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+                            <button class="aBtn aBtn--tab">
+                              Комментарии
+                              <span>(3)</span>
+                            </button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Файлы (5)</button>
+                            <button class="aBtn aBtn--tab">
+                              Файлы
+                              <span>(5)</span>
+                            </button>
                           </li>
                         </ul><!--./aTabs__header-->
 
@@ -1386,7 +1376,7 @@
 
                         <!-- Таб - Идея -->
 
-                        <li class="aTabs__content aTabs__content--idea" style="display: none">
+                        <li class="aTabs__content">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Проблема:</strong>
@@ -1410,10 +1400,16 @@
 
                           <hr>
 
-                          <div class="aIdea__box">
-                            <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый экономический эффект:</strong>
-                            <span class="aIdea__value">32 400 ₽</span>
-                          </div><!--./aIdea__box-->
+                          <div class="aIdea__grid">
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">32 400 ₽</span>
+                            </div><!--./aIdea__box-->
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Фактический <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">? ₽</span>
+                            </div><!--./aIdea__box-->
+                          </div>
 
                         </li><!--./aTabs__content-->
 
@@ -1425,7 +1421,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Автор идеи:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                             <hr>
@@ -1455,7 +1451,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Руководитель автора:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1464,8 +1460,8 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Соавторы идеи:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>,
-                              <a class="aIdea__link" href="">Арслангалин Вадим Ринатович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>,
+                              <a class="aIdea__link" href="">Арслангалин Вадим</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1473,8 +1469,8 @@
                           <div class="aIdea__container">
 
                             <div class="aIdea__box">
-                              <strong class="aIdea__label aIdea__label--mb-0">Исполнитель:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <strong class="aIdea__label aIdea__label--mb-0">Исполнители:</strong>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1483,7 +1479,7 @@
 
                         <!-- Таб - Комментарии -->
 
-                        <li class="aTabs__content aTabs__content--comments">
+                        <li class="aTabs__content" style="display: none">
 
                           <section class="aIdea__comments">
                             <h3 class="visually-hidden">Комментарии</h3>
@@ -1491,17 +1487,17 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
                                   </h4>
                                   <div class="aComment__like">
-                                    <div class="aComment__like-click" title="Нравится"></div>
+                                    <div class="aComment__like-click active" title="Нравится"></div>
                                     <div class="aComment__like-count">0</div>
                                   </div>
                                 </header>
@@ -1528,14 +1524,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1546,18 +1543,6 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
@@ -1565,14 +1550,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1583,35 +1569,23 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
 
                           </section><!--./aIdea__comments-->
 
-                          <form class="aIdea__comments-add aForm" id="form-comment">
+                          <form class="aIdea__comments-add aForm">
 
-                            <div class="aForm__inner">
+                            <div class="aForm__inner aForm__inner--row-gap-12">
 
-                              <div class="aForm__item aForm__item--6">
-                                <label class="aForm__label" for="comment">Оставить комментарий</label>
-                                <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+                              <div class="aForm__item">
+                                <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+                                <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
                               </div><!--./aForm__item-->
 
                               <div class="aForm__item">
-                                <button class="aForm__button aBtn" type="submit">Отправить</button>
+                                <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
                               </div><!--./aForm__item-->
 
                             </div><!--./aForm__inner-->
@@ -1622,7 +1596,7 @@
 
                         <!-- Таб - Файлы -->
 
-                        <li class="aTabs__content" style="display: none">
+                        <li class="aTabs__content aTabs__content--files" style="display: none">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Фотографии:</strong>
@@ -1657,7 +1631,7 @@
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Файлы:</strong>
-                            <ul class="aIdea__files">
+                            <ul class="aIdea__files aIdea__files--flex-column">
                               <li class="aIdea__file">
                                 <a class="aIdea__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
                               </li>
@@ -1685,8 +1659,7 @@
 
                   <footer class="aIdea__footer">
                     <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
-                      <li class="aIdea__footer-item">Категория: Безопасность</li>
-                      <li class="aIdea__footer-item">Рейтинг: 10</li>
+                      <li class="aIdea__footer-item">Категория: Производительность процессов</li>
                     </ul><!--./aIdea__footer-list-->
 
                     <ul class="aIdea__footer-list">
@@ -1709,7 +1682,6 @@
               <li class="aContent__item">
 
                 <!-- Идея -->
-
                 <article class="aIdea">
 
                   <header class="aIdea__header">
@@ -1719,25 +1691,29 @@
                         Предложил:
                         <div class="aIdea__author-inner">
                           <div class="aIdea__author-avatar">
-                            <img class="aIdea__author-img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                            <img class="aIdea__author-img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                           </div>
                           <div class="aIdea__author-info">
-                            <strong class="aIdea__author-name">Кузнецов Николай Сергеевич</strong>
+                            <strong class="aIdea__author-name">
+                              <a href="">Кузнецов Николай</a>
+                            </strong>
                             <time class="aIdea__author-date">27.05.2024 16:30:22</time>
                           </div>
                         </div>
                       </div><!--./aIdea__author-->
 
                       <div class="aIdea__status">
-                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Новая</mark>
+                        <mark class="aIdea__status-name" title="Статус идеи: Новая">Расчет эффективности</mark>
                         <button class="aIdea__status-like aBtn aBtn--icon" title="Нравиться">
-                          <span class="visually-hidden">Нравиться</span>
+                          <span title="Рейтинг">10</span>
                         </button>
                       </div><!--./aIdea__status-->
 
                     </div><!--./aIdea__top-panel-->
 
-                    <h2 class="aIdea__header-title">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</h2>
+                    <h2 class="aIdea__header-title">
+                      <a href="">Идея 12619 - Организация движения автотранспорта внутри 82 цеха</a>
+                    </h2>
                   </header><!--./aIdea__header-->
 
                   <div class="aIdea__content">
@@ -1747,16 +1723,22 @@
 
                         <ul class="aTabs__header">
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Идея</button>
+                            <button class="aBtn aBtn--tab active">Идея</button>
                           </li>
                           <li class="aTabs__item">
                             <button class="aBtn aBtn--tab">Участники</button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab active">Комментарии (3)</button>
+                            <button class="aBtn aBtn--tab">
+                              Комментарии
+                              <span>(3)</span>
+                            </button>
                           </li>
                           <li class="aTabs__item">
-                            <button class="aBtn aBtn--tab">Файлы (5)</button>
+                            <button class="aBtn aBtn--tab">
+                              Файлы
+                              <span>(5)</span>
+                            </button>
                           </li>
                         </ul><!--./aTabs__header-->
 
@@ -1766,7 +1748,7 @@
 
                         <!-- Таб - Идея -->
 
-                        <li class="aTabs__content aTabs__content--idea" style="display: none">
+                        <li class="aTabs__content">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Проблема:</strong>
@@ -1790,10 +1772,16 @@
 
                           <hr>
 
-                          <div class="aIdea__box">
-                            <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый экономический эффект:</strong>
-                            <span class="aIdea__value">32 400 ₽</span>
-                          </div><!--./aIdea__box-->
+                          <div class="aIdea__grid">
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Ожидаемый <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">32 400 ₽</span>
+                            </div><!--./aIdea__box-->
+                            <div class="aIdea__box">
+                              <strong class="aIdea__label aIdea__label--mb-0">Фактический <span>экономический</span> эффект:</strong>
+                              <span class="aIdea__value">? ₽</span>
+                            </div><!--./aIdea__box-->
+                          </div>
 
                         </li><!--./aTabs__content-->
 
@@ -1805,7 +1793,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Автор идеи:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                             <hr>
@@ -1835,7 +1823,7 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Руководитель автора:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1844,8 +1832,8 @@
 
                             <div class="aIdea__box">
                               <strong class="aIdea__label">Соавторы идеи:</strong>
-                              <a class="aIdea__link" href="">Кагарманов Ильдар Абдрашитович</a>,
-                              <a class="aIdea__link" href="">Арслангалин Вадим Ринатович</a>
+                              <a class="aIdea__link" href="">Кагарманов Ильдар</a>,
+                              <a class="aIdea__link" href="">Арслангалин Вадим</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1853,8 +1841,8 @@
                           <div class="aIdea__container">
 
                             <div class="aIdea__box">
-                              <strong class="aIdea__label aIdea__label--mb-0">Исполнитель:</strong>
-                              <a class="aIdea__link" href="">Кузнецов Николай Сергеевич</a>
+                              <strong class="aIdea__label aIdea__label--mb-0">Исполнители:</strong>
+                              <a class="aIdea__link" href="">Кузнецов Николай</a>
                             </div><!--./aIdea__box-->
 
                           </div><!--./aIdea__container-->
@@ -1863,7 +1851,7 @@
 
                         <!-- Таб - Комментарии -->
 
-                        <li class="aTabs__content aTabs__content--comments">
+                        <li class="aTabs__content" style="display: none">
 
                           <section class="aIdea__comments">
                             <h3 class="visually-hidden">Комментарии</h3>
@@ -1871,17 +1859,17 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
                                   </h4>
                                   <div class="aComment__like">
-                                    <div class="aComment__like-click" title="Нравится"></div>
+                                    <div class="aComment__like-click active" title="Нравится"></div>
                                     <div class="aComment__like-count">0</div>
                                   </div>
                                 </header>
@@ -1908,14 +1896,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1926,18 +1915,6 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
@@ -1945,14 +1922,15 @@
                             <div class="aComment">
 
                               <div class="aComment__avatar">
-                                <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+                                <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
                               </div>
 
                               <article class="aComment__body">
 
                                 <header class="aComment__header">
                                   <h4 class="aComment__author">
-                                    <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+                                    <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+                                    <time class="aComment__date">27.05.2024 16:30:22</time>
                                   </h4>
                                   <div class="aComment__like">
                                     <div class="aComment__like-click" title="Нравится"></div>
@@ -1963,35 +1941,23 @@
                                 <div class="aComment__content">
                                   Комментарий от Ильдара
                                 </div>
-
-                                <footer class="aComment__footer">
-                                  <time class="aComment__date">27.05.2024 16:30:22</time>
-                                  <ul class="aComment__options">
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Редактировать</a>
-                                    </li>
-                                    <li class="aComment__item">
-                                      <a class="aComment__link" href="">Удалить</a>
-                                    </li>
-                                  </ul>
-                                </footer>
 
                               </article>
                             </div><!--./comment-->
 
                           </section><!--./aIdea__comments-->
 
-                          <form class="aIdea__comments-add aForm" id="form-comment">
+                          <form class="aIdea__comments-add aForm">
 
-                            <div class="aForm__inner">
+                            <div class="aForm__inner aForm__inner--row-gap-12">
 
-                              <div class="aForm__item aForm__item--6">
-                                <label class="aForm__label" for="comment">Оставить комментарий</label>
-                                <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+                              <div class="aForm__item">
+                                <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+                                <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
                               </div><!--./aForm__item-->
 
                               <div class="aForm__item">
-                                <button class="aForm__button aBtn" type="submit">Отправить</button>
+                                <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
                               </div><!--./aForm__item-->
 
                             </div><!--./aForm__inner-->
@@ -2002,7 +1968,7 @@
 
                         <!-- Таб - Файлы -->
 
-                        <li class="aTabs__content" style="display: none">
+                        <li class="aTabs__content aTabs__content--files" style="display: none">
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Фотографии:</strong>
@@ -2037,7 +2003,7 @@
 
                           <div class="aIdea__box">
                             <strong class="aIdea__label">Файлы:</strong>
-                            <ul class="aIdea__files">
+                            <ul class="aIdea__files aIdea__files--flex-column">
                               <li class="aIdea__file">
                                 <a class="aIdea__file-link" href="">Снимок экрана 2024-04-15 120053.png</a>
                               </li>
@@ -2065,8 +2031,7 @@
 
                   <footer class="aIdea__footer">
                     <ul class="aIdea__footer-list aIdea__footer-list--gap-24">
-                      <li class="aIdea__footer-item">Категория: Безопасность</li>
-                      <li class="aIdea__footer-item">Рейтинг: 10</li>
+                      <li class="aIdea__footer-item">Категория: Производительность процессов</li>
                     </ul><!--./aIdea__footer-list-->
 
                     <ul class="aIdea__footer-list">
@@ -2092,19 +2057,21 @@
 
           <button class="aUpload aBtn">
             <img class="aUpload__img" src="assets/img/upload-icon.svg" width="20" height="20" alt="" aria-hidden="true">
-            Показать еще
+            Показать еще <span>(50)</span>
           </button>
 
         </div><!--./aMain-->
 
         <aside class="aFrame__widget aWidget">
-          <h2 class="visually-hidden">Виджеты</h2>
+          <h2 class="aWidget__title">Виджеты</h2>
+
+          <hr>
 
           <ul class="aWidget__grid">
 
             <li class="aWidget__row">
 
-              <h3 class="aWidget__heading">Статистика</h3>
+              <h3 class="aWidget__heading aWidget__heading--statistic">Статистика</h3>
 
               <!-- Виджет - Статистика -->
 

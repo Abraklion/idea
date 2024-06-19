@@ -1,5 +1,5 @@
 
-<li class="aTabs__content aTabs__content--comments">
+<li class="aTabs__content" style="display: none">
 
   <section class="aIdea__comments">
     <h3 class="visually-hidden">Комментарии</h3>
@@ -7,17 +7,17 @@
     <div class="aComment">
 
       <div class="aComment__avatar">
-        <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+        <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
       </div>
 
       <article class="aComment__body">
 
         <header class="aComment__header">
           <h4 class="aComment__author">
-            <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+            <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
           </h4>
           <div class="aComment__like">
-            <div class="aComment__like-click" title="Нравится"></div>
+            <div class="aComment__like-click active" title="Нравится"></div>
             <div class="aComment__like-count">0</div>
           </div>
         </header>
@@ -44,14 +44,15 @@
     <div class="aComment">
 
       <div class="aComment__avatar">
-        <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+        <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
       </div>
 
       <article class="aComment__body">
 
         <header class="aComment__header">
           <h4 class="aComment__author">
-            <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+            <a class="aComment__author-link" href="" target="_blank">Кузнецов Николай</a>
+            <time class="aComment__date">27.05.2024 16:30:22</time>
           </h4>
           <div class="aComment__like">
             <div class="aComment__like-click" title="Нравится"></div>
@@ -62,18 +63,6 @@
         <div class="aComment__content">
           Комментарий от Ильдара
         </div>
-
-        <footer class="aComment__footer">
-          <time class="aComment__date">27.05.2024 16:30:22</time>
-          <ul class="aComment__options">
-            <li class="aComment__item">
-              <a class="aComment__link" href="">Редактировать</a>
-            </li>
-            <li class="aComment__item">
-              <a class="aComment__link" href="">Удалить</a>
-            </li>
-          </ul>
-        </footer>
 
       </article>
     </div><!--./comment-->
@@ -81,14 +70,15 @@
     <div class="aComment">
 
       <div class="aComment__avatar">
-        <img class="aComment__img" src="assets/img/circle.svg" width="38" height="38" alt="">
+        <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
       </div>
 
       <article class="aComment__body">
 
         <header class="aComment__header">
           <h4 class="aComment__author">
-            <a class="aComment__author-link" href="">Кагарманов Ильдар</a>
+            <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
+            <time class="aComment__date">27.05.2024 16:30:22</time>
           </h4>
           <div class="aComment__like">
             <div class="aComment__like-click" title="Нравится"></div>
@@ -99,35 +89,23 @@
         <div class="aComment__content">
           Комментарий от Ильдара
         </div>
-
-        <footer class="aComment__footer">
-          <time class="aComment__date">27.05.2024 16:30:22</time>
-          <ul class="aComment__options">
-            <li class="aComment__item">
-              <a class="aComment__link" href="">Редактировать</a>
-            </li>
-            <li class="aComment__item">
-              <a class="aComment__link" href="">Удалить</a>
-            </li>
-          </ul>
-        </footer>
 
       </article>
     </div><!--./comment-->
 
   </section><!--./aIdea__comments-->
 
-  <form class="aIdea__comments-add aForm" id="form-comment">
+  <form class="aIdea__comments-add aForm">
 
-    <div class="aForm__inner">
+    <div class="aForm__inner aForm__inner--row-gap-12">
 
-      <div class="aForm__item aForm__item--6">
-        <label class="aForm__label" for="comment">Оставить комментарий</label>
-        <textarea class="aForm__textarea" name="comment" id="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
+      <div class="aForm__item">
+        <label class="aForm__label aForm__label--bold">Оставить комментарий</label>
+        <textarea class="aForm__textarea" name="comment" placeholder="Текст комментария..." autocomplete="off" required></textarea>
       </div><!--./aForm__item-->
 
       <div class="aForm__item">
-        <button class="aForm__button aBtn" type="submit">Отправить</button>
+        <button class="aForm__button aBtn aBtn--comment" type="submit">Отправить</button>
       </div><!--./aForm__item-->
 
     </div><!--./aForm__inner-->

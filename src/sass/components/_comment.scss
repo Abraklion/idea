@@ -1,3 +1,4 @@
+@use "../variables" as v;
 
 .aComment {
   display: flex;
@@ -19,18 +20,37 @@
 
     background-color: rgba(#000, 0.03);
   }
+
+  &:last-child {
+    margin-bottom: 43px;
+
+    &::after {
+      bottom: -23px;
+    }
+  }
 }
 
 .aComment__avatar {
+  user-select: v.$select;
+
   flex: 0 0 auto;
 }
 
 .aComment__img {
+  display: block;
 
+  width: 38px;
+  height: 38px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
 }
 
 .aComment__body {
   flex: 0 1 576px;
+
+  position: relative;
 
   padding: 8px;
 
@@ -38,28 +58,87 @@
 
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 12px;
+    left: -10px;
+
+    width: 10px;
+    height: 11px;
+
+    clip-path: polygon(0 50%, 100% 0, 100% 100%, 96% 94%, 96% 6%, 8% 50%, 96% 96%, 100% 100%);
+
+    //box-shadow: 0 0 0 1px rgba(#000, 0.03);
+    background-color: rgba(#000, 0.2);
+  }
 }
 
 .aComment__header {
+  user-select: v.$select;
+
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   margin: 0 0 16px 0;
 }
 
 .aComment__author {
   margin: 0;
+
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .aComment__author-link {
+  margin: 0 8px 0 0;
 
+  color: rgba(#000, 1);
+
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .aComment__like {
+  display: flex;
+  align-items: center;
 
+  font-size: 12px;
 }
 
 .aComment__like-click {
+  width: 14px;
+  height: 14px;
 
+  position: relative;
+  top: -1px;
+
+  margin-right: 5px;
+
+  background-image: url(../img/like-icon.svg);
+  background-size: 14px;
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+
+  opacity: 0.8;
+
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.active {
+    opacity: 1;
+    background-image: url(../img/like-active-icon.svg);
+  }
 }
 
 .aComment__like-count {
@@ -68,24 +147,63 @@
 
 .aComment__content {
   margin: 0 0 16px 0;
+
+  font-size: 13px;
+
+  line-height: 1.2;
 }
 
 .aComment__footer {
+  user-select: v.$select;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+
+  padding: 6px 0 0 0;
+
+  @media (max-width: 375px) {
+    justify-content: flex-end;
+  }
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: rgba(#000, 0.03);
+  }
 }
 
 .aComment__date {
+  font-weight: 400;
+  font-size: 10px;
 
+  color: rgba(#595959, 0.8);
+
+  @media (max-width: 375px) {
+    display: none;
+  }
 }
 
 .aComment__options {
   display: flex;
   justify-content: space-between;
+  grid-column-gap: 16px;
 
   margin: 0;
   padding: 0;
   list-style: none;
+
+  font-weight: 400;
+  font-size: 10px;
 }
 
 .aComment__item {
@@ -93,7 +211,13 @@
 }
 
 .aComment__link {
+  color: rgba(#000, 0.8);
 
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .aIdea__comments-add {

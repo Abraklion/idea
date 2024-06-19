@@ -5,7 +5,7 @@ title: Заготовка
 description: Описание
 
 link: style.min.css
-script: ['main.js']
+script: ['runtime.js','main.js']
 
 lottiePlayer: false
 ---
@@ -17,12 +17,18 @@ lottiePlayer: false
   </div><!--./frame__left-->
 
   <div class="skeleton__content">
-    <div class="skeleton__title">Все идеи</div>
+    <div class="aTitle">
+      <h1 class="aTitle__head">Бережливое производство</h1>
+      <i class="aTitle__slogan">
+        Есть идея?
+        <img src="assets/img/lamp-icon.svg" width="22"  height="22" alt="">
+        Поделись с компанией!
+      </i>
+    </div>
 
     <div class="aFrame">
 
       <div class="aFrame__main aMain">
-        <h1 class="visually-hidden">Идеи</h1>
 
         <!-- Опции -->
         {{> options}}
@@ -38,19 +44,21 @@ lottiePlayer: false
 
         <button class="aUpload aBtn">
           <img class="aUpload__img" src="assets/img/upload-icon.svg" width="20" height="20" alt="" aria-hidden="true">
-          Показать еще
+          Показать еще <span>(50)</span>
         </button>
 
       </div><!--./aMain-->
 
       <aside class="aFrame__widget aWidget">
-        <h2 class="visually-hidden">Виджеты</h2>
+        <h2 class="aWidget__title">Виджеты</h2>
+
+        <hr>
 
         <ul class="aWidget__grid">
 
           <li class="aWidget__row">
 
-            <h3 class="aWidget__heading">Статистика</h3>
+            <h3 class="aWidget__heading aWidget__heading--statistic">Статистика</h3>
 
             <!-- Виджет - Статистика -->
             {{> widget-statistics}}

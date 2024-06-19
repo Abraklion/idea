@@ -21,6 +21,18 @@
   border: 1px solid rgba(#000, 0.2);
   border-radius: 2px;
 
+  &:not(.aIdea__status-like) {
+    @media (max-width: 460px) {
+      padding: 8px 20px;
+    }
+  }
+
+  &:not(.aIdea__status-like) {
+    @media (max-width: 375px) {
+      padding: 8px 10px;
+    }
+  }
+
   &:hover {
     background-color: color.scale(#184A78, $lightness: 20%);
     color: #fff;
@@ -42,6 +54,27 @@
     &:active {
       background-color: #38804C;
       color: #fff;
+    }
+  }
+
+  &--white {
+    background-color: #fff;
+
+    color: #000;
+
+    &:hover {
+      background-color: color.scale(#fff, $lightness: 10%);
+      color: #000;
+
+      box-shadow: inset 2px 2px 2px 0 rgba(#000, 0.05),
+      inset -2px -2px 2px 0 rgba(#000, 0.05);
+    }
+
+    &:active {
+      background-color: #fff;
+      color: #000;
+
+      box-shadow: none;
     }
   }
 
@@ -77,6 +110,19 @@
     .aBtn__img {
       opacity: 0.8;
     }
+
+    &:not(.aIdea__status-like) {
+      @media (max-width: 460px) {
+        padding: 7px;
+      }
+    }
+
+    &:not(.aIdea__status-like) {
+      @media (max-width: 375px) {
+        padding: 7px;
+      }
+    }
+
   }
 
   &--tab {
@@ -88,11 +134,31 @@
 
     transition: all 0.1s ease;
 
+    @media (max-width: 460px) {
+      padding: 6px 8px !important;
+
+      font-size: 12px !important;
+    }
+
+    @media (max-width: 375px) {
+      padding: 6px 8px !important;
+    }
+
     &.active {
       background-color: #184A78;
 
       color: #fff;
+
+      pointer-events: none;
     }
+
+    span {
+      pointer-events: none;
+    }
+  }
+
+  &--comment {
+    padding: 6px 16px;
   }
 
 }
@@ -102,4 +168,6 @@
 
   width: 16px;
   height: 16px;
+
+  pointer-events: none;
 }

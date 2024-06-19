@@ -20,24 +20,27 @@ export default class Modal extends ModalCore {
    * @param {null|string} [options.modalParent]       - селектор родитель куда вставляем модальное окно.
    *
    * @param {boolean}     [options.overflowHidden]    - убрать скролл у документа при появлении модального окна
+   *
+   * @param {string}      [options.modalDisplay]           - отображение
    */
   constructor(triggerSelector, modalSelector,
               {
                 closeSelector = '[data-sumbiot-modal-close]',
-                closeClickOverlay = true,
+                closeClickOverlay = false,
 
                 modalGroup = '[data-sumbiot-modal]',
 
                 modalParent = null,
 
-                overflowHidden = false
+                overflowHidden = false,
+
+                modalDisplay = 'block',
               } = {}) {
 
     super()
 
     this._trigger = triggerSelector
 
-    this._modalSelector = modalSelector
     this.modal = document.querySelector(modalSelector)
 
     this._close = this.modal?.querySelector(closeSelector)
@@ -49,6 +52,7 @@ export default class Modal extends ModalCore {
 
     this._overflowHidden = overflowHidden || (this.modal?.dataset.sumbiotOverflow && this.modal?.dataset.sumbiotOverflow === 'true') || false
 
+    this._display = modalDisplay
   }
 
   /**
@@ -106,7 +110,7 @@ export default class Modal extends ModalCore {
     document.addEventListener('click', (e) => {
       let target = e.target;
 
-      if (target && target.matches(this._trigger) && target.dataset.sumbiotTarget === this._modalSelector || target && target.parentElement.matches(this._trigger) && target.parentElement.dataset.sumbiotTarget === this._modalSelector) {
+      if (target && target.matches(this._trigger) || target && target.parentElement?.matches(this._trigger)) {
         e.preventDefault()
         e.stopPropagation()
 
@@ -131,7 +135,7 @@ export default class Modal extends ModalCore {
 
     this._modalPosition()
 
-    this.modal.style.display = 'block';
+    this.modal.style.display = this._display;
   }
 
   /**

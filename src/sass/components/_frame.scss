@@ -1,10 +1,27 @@
 
 .aFrame {
+  max-width: 1600px;
+
   display: grid;
   grid-template-columns: 1fr 258px;
   grid-column-gap: 14px;
 
   padding: 14px;
+  margin: 0 auto;
+
+  @media (max-width: 1350px) {
+    display: block;
+  }
+
+  @media (max-width: 460px) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (max-width: 411px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
 
 .aFrame__main {

@@ -4,26 +4,39 @@
 
   grid-template-columns: 336px 1fr;
   grid-template-rows: 1fr;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .skeleton__left {
   background-color: rgba(#54A3ED,0.1);
 
   border-right: 1px solid rgba(#000000, 0.1);
+
+  @media (max-width: 992px) {
+    display: none;
+  }
 }
 
 .skeleton__content {
-  padding-top: 70px;
+  margin-top: 70px;
+  border-top: 1px solid rgba(#000000, 0.1);
+
+  @media (max-width: 992px) {
+    margin-top: 0;
+  }
 }
 
 .skeleton__title {
-  padding: 14px 24px 13px;
+  margin: 0;
+  padding: 16px 14px 6px;
 
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
 
   line-height: 31px;
 
-  border-top: 1px solid rgba(#000000, 0.1);
-  border-bottom: 1px solid rgba(#000000, 0.1);
+
 }

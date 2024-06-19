@@ -1,4 +1,4 @@
-<section class="aMain__filter aModal aModal--filter" style="display: none" id="modal-filter" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
+<section class="aMain__filter aModal" id="modal-filter" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
   <h2 class="aModal__title">Фильтр</h2>
 
@@ -7,20 +7,6 @@
     <form class="aForm" id="form-filter" method="POST">
 
       <div class="aForm__inner">
-
-        <div class="aForm__item aForm__item--column-6">
-          <label class="aForm__label" for="category">Категория</label>
-          <select class="aForm__select js-select2" name="category" id="category" required>
-            <option value=""></option>
-            <option value="">Безапасность</option>
-            <option value="">Качество</option>
-            <option value="">Порядок</option>
-            <option value="">Производительность процессов</option>
-            <option value="">Производительность труда</option>
-            <option value="">Энергоэффективность</option>
-            <option value="">Другие идеи</option>
-          </select>
-        </div><!--./aForm__item-->
 
         <div class="aForm__item aForm__item--column-6">
           <label class="aForm__label" for="division">Дивизион</label>
@@ -37,11 +23,25 @@
         </div><!--./aForm__item-->
 
         <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="category">Категория</label>
+          <select class="aForm__select js-select2" name="category" id="category" required>
+            <option value=""></option>
+            <option value="">Безапасность</option>
+            <option value="">Качество</option>
+            <option value="">Порядок</option>
+            <option value="">Производительность процессов</option>
+            <option value="">Производительность труда</option>
+            <option value="">Энергоэффективность</option>
+            <option value="">Другие идеи</option>
+          </select>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
           <label class="aForm__label" for="date-start">Дата от</label>
           <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-start" placeholder="00.00.0000" autocomplete="off" required>
         </div><!--./aForm__item-->
 
-        <div class="aForm__item aForm__item--column-6">
+        <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
           <label class="aForm__label" for="date-end">Дата до</label>
           <input class="aForm__input js-datepicker" type="text" name="date_start" id="date-end" placeholder="00.00.0000" autocomplete="off"  required>
         </div><!--./aForm__item-->
@@ -61,12 +61,12 @@
           </select>
         </div><!--./aForm__item-->
 
-        <div class="aForm__item aForm__item--column-3">
+        <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
           <button class="aForm__button aBtn" type="submit">Применить</button>
         </div><!--./aForm__item-->
 
-        <div class="aForm__item aForm__item--column-3">
-          <button class="aForm__button aBtn" type="reset">Сбросить фильтр</button>
+        <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
+          <button class="aForm__button aBtn aBtn--white" type="reset">Сбросить</button>
         </div><!--./aForm__item-->
 
       </div><!--./aForm__inner-->

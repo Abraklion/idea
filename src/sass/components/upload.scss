@@ -4,12 +4,16 @@
   justify-content: center;
   align-items: center;
 
-  opacity: 0.3;
+  opacity: 0.8;
 
   margin: 32px auto;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
+  }
+
+  span {
+    margin: 0 0 0 3px;
   }
 }
 

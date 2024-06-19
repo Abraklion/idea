@@ -1,10 +1,12 @@
+@use "../variables" as v;
 
 .aOptions {
+  user-select: v.$select;
 
   &:after {
     content: '';
 
-   display: block;
+    display: block;
 
     border-bottom: 1px solid rgba(#000, 0.03);
   }
@@ -24,8 +26,13 @@
   background-color: rgba(#54A3ED, 0.03);
 
   border: 1px solid rgba(#000, 0.1);
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, .07);
 
   border-radius: 2px;
+
+  @media (max-width: 600px) {
+    padding: 8px 12px;
+  }
 }
 
 .aOptions__list {
