@@ -5,7 +5,7 @@ title: Заготовка
 description: Описание
 
 link: style.min.css
-script: ['runtime.js','main.js']
+script: ['runtime.js','datepicker.js', 'select2.js', 'main.js']
 
 lottiePlayer: false
 ---
@@ -17,59 +17,63 @@ lottiePlayer: false
   </div><!--./frame__left-->
 
   <div class="skeleton__content">
-    <div class="aTitle">
-      <h1 class="aTitle__head">Бережливое производство</h1>
-      <i class="aTitle__slogan">
-        Есть идея?
-        <img src="assets/img/lamp-icon.svg" width="22"  height="22" alt="">
-        Поделись с компанией!
-      </i>
-    </div>
 
-    <div class="aFrame">
+    <div class="aBody">
+      <div class="aTitle">
+        <h1 class="aTitle__head">Бережливое производство</h1>
+        <i class="aTitle__slogan">
+          Есть идея?
+          <img src="assets/img/lamp-icon.svg" width="22"  height="22" alt="">
+          Поделись с компанией!
+        </i>
+      </div><!--./aTitle-->
 
-      <div class="aFrame__main aMain">
+      <div class="aFrame">
 
-        <!-- Опции -->
-        {{> options}}
+        <div class="aFrame__main aMain">
 
-        <!-- Фильтр -->
-        {{> filter}}
+          <!-- Опции -->
+          {{> options}}
 
-        <!-- Поиск -->
-        {{> search}}
+          <!-- Фильтр -->
+          {{> filter}}
 
-        <!-- Тело -->
-        {{> content}}
+          <!-- Поиск -->
+          {{> search}}
 
-        <button class="aUpload aBtn">
-          <img class="aUpload__img" src="assets/img/upload-icon.svg" width="20" height="20" alt="" aria-hidden="true">
-          Показать еще <span>(50)</span>
-        </button>
+          <!-- Тело -->
+          {{> content}}
 
-      </div><!--./aMain-->
+          <button class="aUpload aBtn">
+            <img class="aUpload__img" src="assets/img/upload-icon.svg" width="20" height="20" alt="" aria-hidden="true">
+            Показать еще <span>(50)</span>
+          </button>
 
-      <aside class="aFrame__widget aWidget">
-        <h2 class="aWidget__title">Виджеты</h2>
+        </div><!--./aMain-->
 
-        <hr>
+        <aside class="aFrame__widget aWidget">
+          <h2 class="aWidget__title">Виджеты</h2>
 
-        <ul class="aWidget__grid">
+          <hr>
 
-          <li class="aWidget__row">
+          <ul class="aWidget__grid">
 
-            <h3 class="aWidget__heading aWidget__heading--statistic">Статистика</h3>
+            <li class="aWidget__row">
 
-            <!-- Виджет - Статистика -->
-            {{> widget-statistics}}
+              <h3 class="aWidget__heading aWidget__heading--statistic">Статистика</h3>
 
-          </li><!--./aWidget__row-->
+              <!-- Виджет - Статистика -->
+              {{> widget-statistics}}
 
-        </ul><!--./aWidget__grid-->
+            </li><!--./aWidget__row-->
 
-      </aside><!--./aWidget-->
+          </ul><!--./aWidget__grid-->
 
-    </div><!--./aFrame-->
+        </aside><!--./aWidget-->
+
+      </div><!--./aFrame-->
+
+    </div><!--./aBody-->
 
   </div><!--./skeleton__content-->
 

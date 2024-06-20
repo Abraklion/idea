@@ -39,6 +39,7 @@ const tabs = (parentSelector: string, tabSelector: string, contentSelector: stri
 
   function hideTabContent(tab: NodeListOf<HTMLElement>, content: NodeListOf<HTMLElement>) : void {
     content.forEach((item: HTMLElement) : void => {
+      item.classList.add('animated', 'fadeIn');
       item.style.display = 'none';
     });
 

@@ -4,11 +4,72 @@
 @include mF.form(v.$container,v.$orientation);
 
 .aForm {
+  .aForm__input {
+    width: 100%;
+    position: relative;
 
+    margin: 0;
+    padding: 10px 16px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: Roboto, sans-serif;
+    line-height: 18px;
+
+    color: #181818;
+
+    border: 1px solid rgba(#000, 0.2);
+    border-radius: 2px;
+    outline: 0;
+
+    box-shadow: none;
+
+    transition: box-shadow .3s ease;
+
+    @media (max-width: 460px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &:focus{
+      box-shadow: none;
+
+      border-color: #0a5294;
+    }
+  }
+
+  .aForm__textarea {
+    display: block;
+
+    width: 100%;
+    height: 130px;
+
+    padding: 12px 10px;
+
+    font-weight: 500;
+    font-size: 15px;
+
+    resize: none;
+
+    border: 1px solid rgba(#000000, 0.2);
+
+    box-shadow: none;
+    border-radius: 2px;
+
+    &:focus{
+      box-shadow: none;
+
+      border-color: #0a5294;
+    }
+  }
 }
 
 .aForm__inner {
-  grid-row-gap: 20px;
+
+  @media (max-width: 768px) {
+    grid-row-gap: 20px;
+  }
 
   &--row-gap-12 {
     grid-row-gap: 12px;
@@ -24,32 +85,32 @@
 .aForm__item {
 
   &--column-6 {
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       grid-column: span 12;
     }
   }
 
   &--column-3 {
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       margin-top: 5px;
       grid-column: span 6;
     }
   }
 
   &--column-2 {
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       grid-column: span 3;
     }
   }
 
   &--column-10 {
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       grid-column: span 9;
     }
   }
 
   &--position-1 {
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       order: 1;
     }
   }
@@ -82,32 +143,41 @@
   }
 }
 
-.aForm__input {
-  padding: 8px;
+.aForm__calendar {
+  position: relative;
 
-  font-size: 15px;
+  &::after {
+    content: '';
 
-  border: 1px solid rgba(#000, 0.2);
+    position: absolute;
+    top: 50%;
+    right: 8px;
 
-  &:focus{
-    box-shadow: none;
+    width: 18px;
+    height: 18px;
+
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.7836 6.48983H3.60371C3.00957 6.48983 2.52441 6.00468 2.52441 5.41053C2.52441 4.81639 3.00957 4.33124 3.60371 4.33124H15.7836C16.3777 4.33124 16.8629 4.81639 16.8629 5.41053C16.8629 6.00468 16.3777 6.48983 15.7836 6.48983Z' fill='%23FFB89A'/%3E%3Cpath d='M14.1857 3.00586H12.3629C12.0711 3.00586 11.8355 3.24141 11.8355 3.5332C11.8355 3.825 12.0711 4.06055 12.3629 4.06055H14.1857C14.7412 4.06055 15.1947 4.48242 15.1947 4.99922V5.74277H2.20098V4.99922C2.20098 4.48066 2.65273 4.06055 3.20996 4.06055H5.15059C5.44238 4.06055 5.67793 3.825 5.67793 3.5332C5.67793 3.24141 5.44238 3.00586 5.15059 3.00586H3.2082C2.0709 3.00586 1.14453 3.90059 1.14453 4.99922V14.2752C1.14453 15.3738 2.0709 16.2686 3.2082 16.2686H14.1857C15.323 16.2686 16.2494 15.3738 16.2494 14.2752V5.00098C16.2494 3.90059 15.323 3.00586 14.1857 3.00586ZM14.1857 15.2156H3.2082C2.65273 15.2156 2.19922 14.7938 2.19922 14.277V6.79922H15.193V14.277C15.1947 14.7955 14.7412 15.2156 14.1857 15.2156Z' fill='%2345484C'/%3E%3Cpath d='M7.86797 3.81621C7.65 3.70898 7.39336 3.76699 7.24043 3.94101C7.20176 3.82324 7.17012 3.65624 7.17012 3.44706C7.17012 3.21855 7.20879 3.04277 7.25098 2.92324C7.41797 3.06562 7.66406 3.09199 7.86445 2.97246C8.11406 2.82304 8.19492 2.49785 8.04551 2.24824C7.77305 1.79296 7.41445 1.72617 7.22637 1.72617C6.58301 1.72617 6.11719 2.45038 6.11719 3.44531C6.11719 4.44023 6.58125 5.16796 7.22461 5.16796C7.58672 5.16796 7.91016 4.93242 8.11055 4.52285C8.23887 4.26093 8.12988 3.94453 7.86797 3.81621ZM11.1779 3.84081C10.96 3.73359 10.7033 3.7916 10.5504 3.96562C10.5117 3.84785 10.4801 3.68085 10.4801 3.47167C10.4801 3.24316 10.5187 3.06738 10.5609 2.94785C10.7279 3.09023 10.974 3.1166 11.1744 2.99706C11.424 2.84765 11.5049 2.52246 11.3555 2.27285C11.083 1.81757 10.7244 1.75078 10.5363 1.75078C9.89297 1.75078 9.42715 2.47499 9.42715 3.46992C9.42715 4.46484 9.89297 5.18906 10.5363 5.18906C10.8984 5.18906 11.2219 4.95351 11.4223 4.54394C11.5471 4.28554 11.4381 3.96913 11.1779 3.84081Z' fill='%2345484C'/%3E%3Cpath d='M12.3111 9H3.52734C3.23555 9 3 9.23555 3 9.52734C3 9.81914 3.23555 10.0547 3.52734 10.0547H12.3111C12.6029 10.0547 12.8385 9.81914 12.8385 9.52734C12.8385 9.23555 12.6012 9 12.3111 9ZM11.7521 12.0814H10.4514C10.1596 12.0814 9.92402 12.317 9.92402 12.6088C9.92402 12.9006 10.1596 13.1361 10.4514 13.1361H11.7521C12.0439 13.1361 12.2795 12.9006 12.2795 12.6088C12.2795 12.317 12.0439 12.0814 11.7521 12.0814ZM8.42812 12.0814H3.52734C3.23555 12.0814 3 12.317 3 12.6088C3 12.9006 3.23555 13.1361 3.52734 13.1361H8.42812C8.71992 13.1361 8.95547 12.9006 8.95547 12.6088C8.95547 12.317 8.71992 12.0814 8.42812 12.0814Z' fill='%2333CC99'/%3E%3C/svg%3E ");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0.5;
+
+    transform: translateY(-50%);
+    transition: opacity 0.2s ease;
+
+    pointer-events: none;
   }
-}
 
-.aForm__textarea {
-  display: block;
+  &:focus-within {
 
-  width: 100%;
-  height: 130px;
+    &::after {
+      opacity: 1;
+    }
+  }
 
-  padding: 12px 10px;
-
-  font-weight: 500;
-  font-size: 15px;
-
-  resize: none;
-
-  border: 1px solid rgba(#000000, 0.2);
+  .ui-datepicker-inline {
+    position: absolute;
+  }
 }
 
 .aForm__select {
@@ -123,14 +193,14 @@
 
   .aMain__filter & {
     width: 100%;
-    padding: 10.5px 3px !important;
+    padding: 12.5px 3px !important;
   }
 
   .aMain__search & {
     width: 100%;
-    padding: 10.5px 3px !important;
+    padding: 12.5px 3px !important;
 
-    @media (max-width: 576px) {
+    @media (max-width: 612px) {
       height: 100%;
     }
   }

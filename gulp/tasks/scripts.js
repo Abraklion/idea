@@ -13,7 +13,8 @@ module.exports = function () {
 
           // каркас общий
           main: {
-            import: './src/js/main.ts'
+            import: './src/js/main.ts',
+            dependOn: ['datepicker', 'select2']
           },
 
           // слайдер
@@ -38,7 +39,7 @@ module.exports = function () {
 
         /** берет зависимость из среды пользователя **/
         externals: {
-          // jquery: 'jQuery',
+          jquery: 'jQuery',
         },
 
         /** оптимизация **/

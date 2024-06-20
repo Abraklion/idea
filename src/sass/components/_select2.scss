@@ -1,0 +1,118 @@
+@use "select2/dist/css/select2.min"; //-> кастомные селекты (подключение стилей библиотеки select2 из node_modules)
+
+.sSelect {
+  padding: 5px 0;
+
+  font-family: "Open-Sans", sans-serif;
+  font-size: 15px;
+}
+
+.select2-container .select2-selection--single{
+  height: 40px;
+}
+
+.select2-selection__arrow {
+  height: 40px !important;
+
+  top: 0 !important;
+  right: 8px !important;
+}
+
+.select2-selection__rendered {
+  padding: 0 40px 0 16px !important;
+
+  @media (max-width: 460px) {
+    padding-left: 10px !important;
+  }
+}
+
+.select2-results__option--highlighted{
+  background-color: rgba(#000,0.05)!important;
+
+  color: #000 !important;
+
+  transition: all 0.1s ease;
+}
+
+.sSelect-dropdown {
+  top: 5px;
+
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+
+  font-size: 15px;
+}
+
+.select2-results {
+  border-radius: 2px !important;
+}
+
+.select2-results__options{
+
+  border-top: 1px solid rgb(170, 170, 170);
+
+  border-radius: 2px;
+
+  // Кнопки боковые
+  &::-webkit-scrollbar-button {
+    width: 3px;
+    height: 0;
+  }
+
+  // Цвет дорожки, по которой двигается бегунок прокрутки.
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0.05);
+  }
+
+  // Цвет бегунка полосы, а так же его закругление.
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  // Основная ширина полосы прокрутки.
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+}
+
+.select2-results__option--selectable {
+  padding: 8px 16px;
+
+  border-bottom: 1px solid rgba(#000,0.1);
+}
+
+.select2-container--default .select2-results > .select2-results__options {
+  border-radius: 2px!important;
+
+  max-height: 280px;
+
+  box-shadow: 0 4px 8px -2px rgba(#000,0.2);
+}
+
+.select2-search__field {
+  outline: none;
+
+  padding: 8px 12px!important;
+}
+
+.select2-results__message {
+  padding: 9px 16px;
+}
+
+.select2-container--default.select2-container--disabled .select2-selection--single {
+  background-color: #fff !important;
+}
+
+.sSelect {
+  border: 1px solid rgba(0, 0, 0, .2) !important;
+
+  border-radius: 2px !important;
+
+  &:focus {
+      border-color: #0a5294 !important;
+  }
+}
+
+.sSelect-dropdown {
+  border-radius: 2px!important;
+}
