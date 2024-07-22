@@ -1,0 +1,67 @@
+
+.aBurger {
+  display: none;
+
+  @media (max-width: 576px) {
+    display: block;
+
+    width: 34px;
+    height: 34px;
+
+    position: relative;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+
+      width: 20px;
+      height: 3px;
+
+      margin: -2px 0 0 -10px;
+
+      background-color: rgba(#202020, 0.6);
+
+      border-radius: 2px;
+
+      box-shadow: 0 -7px 0 0 rgba(#202020, 0.6), 0 7px 0 0 rgba(#202020, 0.6);
+    }
+
+    &::after {
+      content: none;
+    }
+
+    &--active {
+
+      &:before {
+        box-shadow: none;
+
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        content: '';
+
+        box-shadow: none;
+
+        transform: rotate(-45deg);
+      }
+
+      & + .aOptions__list--news {
+        visibility: visible;
+
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+  @media (max-width: 460px) {
+    width: 32px;
+    height: 32px;
+  }
+}

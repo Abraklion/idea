@@ -57,6 +57,20 @@
     }
   }
 
+  &--blue {
+    background-color: #32A6E7;
+
+    &:hover {
+      background-color: color.scale(#32A6E7, $lightness: 10%);
+      color: #fff;
+    }
+
+    &:active {
+      background-color: #32A6E7;
+      color: #fff;
+    }
+  }
+
   &--white {
     background-color: #fff;
 
@@ -159,6 +173,13 @@
 
   &--comment {
     padding: 6px 16px;
+  }
+
+  &--fix {
+    min-width: 134px;
+
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
 }

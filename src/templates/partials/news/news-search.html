@@ -1,0 +1,58 @@
+<section class="aMain__filter aModal" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
+
+  <h2 class="aModal__title">Поиск</h2>
+
+  <div class="aModal__inner">
+
+    <form class="aForm" id="form-search" method="POST">
+
+      <div class="aForm__inner">
+
+        <div class="aFrom__item">
+          <label class="visually-hidden" for="search">Поиск</label>
+          <input class="aForm__input aForm__input--height-42" type="text" name="search" id="search" placeholder="Введите текст новости" autocomplete="off">
+        </div>
+
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="type">Тип</label>
+          <select class="aForm__select js-select2" name="type" id="type" data-placeholder="Выберите тип">
+            <option value=""></option>
+            <option value="1">Идея</option>
+            <option value="2">Благодарность</option>
+          </select>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-6">
+          <label class="aForm__label" for="author">Автор</label>
+          <select class="aForm__select js-select2" name="author" id="author" data-placeholder="Выберите автора">
+            <option value=""></option>
+            <option value="1">Кузнецов Николай</option>
+            <option value="2">Кагарманов Ильдар</option>
+            <option value="3">Арслангалин Вадим</option>
+          </select>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
+          <label class="aForm__label" for="date_create">Дата создания</label>
+          <div class="aForm__calendar js-datepicker">
+            <input class="aForm__input js-input" type="text" name="date_create" id="date_create" placeholder="00.00.0000" autocomplete="off">
+          </div>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
+          <button class="aForm__button aBtn" type="submit">Применить</button>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-3 aForm__item--self-end aForm__item--position-1">
+          <button class="aForm__button aBtn aBtn--white" type="reset">Сбросить</button>
+        </div><!--./aForm__item-->
+
+      </div><!--./aForm__inner-->
+
+    </form><!--./aForm-->
+
+  </div><!--./modal__inner-->
+
+  <button type="button" class="aModal__close" data-sumbiot-modal-close title="Закрыть окно"></button>
+
+</section><!--./aModal-->
