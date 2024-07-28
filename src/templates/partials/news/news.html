@@ -1,4 +1,4 @@
-<article class="aNews">
+<article class="aNews js-news">
 
   <header class="aNews__header">
     <div class="aNews__top-panel">
@@ -19,6 +19,9 @@
       </div><!--./aIdea__author-->
 
       <div class="aNews__status">
+        <div class="aNews__rating">
+          Рейтинг: <span>0</span>
+        </div>
         <button class="aNews__status-like aBtn aBtn--icon" title="Нравиться"></button>
         <button class="aNews__status-bell aBtn aBtn--icon" title="Подписаться"></button>
       </div><!--./aIdea__status-->
@@ -26,7 +29,7 @@
     </div><!--./aIdea__top-panel-->
   </header><!--./aIdea__header-->
 
-  <div class="aNews__content">
+  <div class="aNews__content js-idea">
 
     <div class="aNews__body">
 
@@ -100,25 +103,20 @@
 
     </div><!--./aNews__body-->
 
-    <div class="aNews__aUnwrap aUnwrap">
-      <button class="aUnwrap__btn aBtn aBtn--icon" title="Развернуть"></button>
-    </div><!--./aUnwrap-->
-
   </div><!--./aNews__content-->
 
   <footer class="aNews__footer">
 
     <ul class="aNews__info">
       <li class="aNews__item">Тип новости: Идея</li>
-      <li class="aNews__item">Рейтинг: 0</li>
     </ul><!--./aNews__info-->
 
-    <section class="aNews__comments">
+    <section class="aNews__comments js-comments">
       <h3 class="visually-hidden">Комментарии</h3>
 
-      <div class="aNews__comments--inner">
+      <div class="aNews__comments-inner">
 
-        <div class="aComment">
+        <div class="aComment js-comment">
 
           <div class="aComment__avatar">
             <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
@@ -155,7 +153,7 @@
           </article>
         </div><!--./comment-->
 
-        <div class="aComment">
+        <div class="aComment js-comment">
 
           <div class="aComment__avatar">
             <img class="aComment__img" src="assets/img/photo.jpg" width="38" height="38" alt="">
@@ -181,37 +179,7 @@
           </article>
         </div><!--./comment-->
 
-        <div class="aComment">
-
-          <div class="aComment__avatar">
-            <img class="aComment__img" src="assets/img/photo_1.png" width="38" height="38" alt="">
-          </div>
-
-          <article class="aComment__body">
-
-            <header class="aComment__header">
-              <h4 class="aComment__author">
-                <a class="aComment__author-link" href="" target="_blank">Кагарманов Ильдар</a>
-                <time class="aComment__date">27.05.2024 16:30:22</time>
-              </h4>
-              <div class="aComment__like">
-                <div class="aComment__like-click" title="Нравится"></div>
-                <div class="aComment__like-count">0</div>
-              </div>
-            </header>
-
-            <div class="aComment__content">
-              Комментарий от Ильдара
-            </div>
-
-          </article>
-        </div><!--./comment-->
-
       </div><!-- ./aNews__comments--inner-->
-
-      <div class="aNews__unwrap-comments">
-        <a href="">Предыдущие комментарии (2)</a>
-      </div><!-- ./aNews__unwrap-comments-->
 
     </section><!--./aNews__comments-->
 

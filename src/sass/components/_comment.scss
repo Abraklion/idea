@@ -29,13 +29,21 @@
     }
   }
 
-  .aNews__comments--inner & {
+  .aNews__comments-inner & {
 
     &:first-child {
       margin-top: 24px;
     }
 
     &:last-child {
+      margin-bottom: 24px;
+
+      &::after {
+        content: none;
+      }
+    }
+
+    &--after {
       margin-bottom: 24px;
 
       &::after {
@@ -89,7 +97,7 @@
     background-color: rgba(#000, 0.2);
   }
 
-  .aNews__comments--inner & {
+  .aNews__comments-inner & {
     flex: 0 1 850px;
   }
 }

@@ -11,9 +11,15 @@ module.exports = function () {
         /** точки входа **/
         entry: {
 
-          // каркас общий
+          // каркас есть идеи
           main: {
             import: './src/js/main.ts',
+            dependOn: ['datepicker', 'select2']
+          },
+
+          // каркас ленты новостей
+          news: {
+            import: './src/js/news.ts',
             dependOn: ['datepicker', 'select2']
           },
 

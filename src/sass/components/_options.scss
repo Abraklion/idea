@@ -60,7 +60,7 @@
       width: calc(100vw - 28px);
 
       position: absolute;
-      top: calc(100% + 12px);
+      top: calc(100% + 32px);
       left: -13px;
       z-index: 11;
 
@@ -87,7 +87,7 @@
 
     .aOptions__item {
       @media (max-width: 576px) {
-        margin-bottom: 8px;
+        margin-bottom: 16px;
 
         &:last-child {
           margin-bottom: 0;
@@ -98,8 +98,8 @@
     .aBtn--fix {
       @media (max-width: 576px) {
         min-width: 100%;
-        padding-top: 10px !important;
-        padding-bottom: 10px !important;
+        padding-top: 14px !important;
+        padding-bottom: 14px !important;
 
       }
     }

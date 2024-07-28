@@ -4,7 +4,7 @@
     "sourceMap": true, // -> исходные карты
     "noImplicitAny": false, // -> можно ли не указывать тип
     "module": "CommonJS", // -> устанавливает систему модулей для программы
-    "target": "es5", // -> стандарт компелируемого файла
+    "target": "es6", // -> стандарт компелируемого файла
     "allowJs": true, // -> разрешает импортировать файлы JavaScript внутри вашего проекта
 
     "esModuleInterop" : true // -> для работы вот таких импортов import React from "react", вместо import * as React from "react"
