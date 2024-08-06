@@ -51,7 +51,7 @@ const date = () => {
     })
 
     // скрываем календарь если клюкнули не на него
-    document.addEventListener('click', function(e: MouseEvent){
+    document.querySelector('.aBody').addEventListener('click', function(e: MouseEvent){
       const target: HTMLElement = e.target as HTMLElement;
 
       if(!(target && target.closest('.ui-datepicker-inline') || target && target.closest('.js-input') )){
@@ -60,7 +60,7 @@ const date = () => {
     })
 
     // скрываем календарь по нажатию Esc
-    window.addEventListener("keydown", (e) => {
+    document.querySelector('.aBody').addEventListener("keydown", (e: KeyboardEvent) => {
 
       if(e.key === "Escape" || e.keyCode === 27) {
         $calendar.hide()

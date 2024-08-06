@@ -1,15 +1,15 @@
 @use "../variables" as v;
 
 .aTitle {
-  max-width: 1600px;
+  max-width: 1850px;
 
   user-select: v.$select;
 
-  padding: 20px 14px 10px;
+  padding: 10px 14px 0;
   margin: 0 auto;
 
   @media (max-width: 500px) {
-    padding-bottom: 8px;
+
   }
 
   @media (max-width: 411px) {
@@ -74,5 +74,12 @@
   .aTitle__img {
     width: 16px;
     height: 16px;
+
+    @media (max-width: 411px) {
+      bottom: -2px;
+
+      width: 14px;
+      height: 14px;
+    }
   }
 }

@@ -1,16 +1,16 @@
 @charset "UTF-8";
 
 // Шрифты
-//@use "fonts";
+@use "fonts";
 
 // Нормализация css
-//@use "normalize";
+@use "normalize";
 
 // Анимации
 //@use 'animations';
 
 // Базовые настройки
-//@use "core";
+@use "core";
 
 // Служебные класы
 @use "service";
@@ -26,7 +26,7 @@
 @use "components/select2";
 @use "components/plug";
 
-//@use "components/skeleton";
+@use "components/skeleton";
 @use "components/title";
 @use "components/frame";
 @use "components/main";

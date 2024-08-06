@@ -12,4 +12,9 @@
 
 .aContent__item {
   margin: 0 0 24px 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
 }

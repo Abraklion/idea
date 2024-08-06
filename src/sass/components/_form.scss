@@ -41,7 +41,14 @@
     &--height-42 {
       padding-top: 11px;
       padding-bottom: 11px;
+
+      @media (max-width: 460px) {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
     }
+
+
   }
 
   .aForm__textarea {
@@ -68,6 +75,15 @@
       border-color: #0a5294;
     }
   }
+
+  &--news {
+    .aForm__input {
+      @media (max-width: 411px) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+    }
+  }
 }
 
 .aForm__inner {
@@ -85,37 +101,70 @@
       grid-column-gap: 16px;
     }
   }
+
+  .aForm--news & {
+    @media (max-width: 411px) {
+      grid-row-gap: 12px;
+    }
+  }
 }
 
 .aForm__item {
 
   &--column-6 {
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       grid-column: span 12;
     }
   }
 
   &--column-3 {
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       margin-top: 5px;
       grid-column: span 6;
     }
+
+    .aForm--news & {
+      &:nth-child(4), &:nth-child(5) {
+        @media (max-width: 1490px) {
+          grid-column: span 4;
+        }
+
+        @media (max-width: 700px) {
+          grid-column: span 6;
+        }
+
+        @media (max-width: 450px) {
+          grid-column: span 12;
+        }
+      }
+
+      &:nth-child(6), &:nth-child(7) {
+        @media (max-width: 1490px) {
+          grid-column: span 2;
+        }
+
+        @media (max-width: 700px) {
+          grid-column: span 6;
+        }
+      }
+    }
+
   }
 
   &--column-2 {
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       grid-column: span 3;
     }
   }
 
   &--column-10 {
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       grid-column: span 9;
     }
   }
 
   &--position-1 {
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       order: 1;
     }
   }
@@ -145,6 +194,12 @@
     font-size: 13px;
 
     color: rgba(#000, 0.8);
+  }
+
+  .aForm--news & {
+    @media (max-width: 411px) {
+      font-size: 13px;
+    }
   }
 }
 
@@ -201,11 +256,18 @@
     padding: 12.5px 3px !important;
   }
 
+  .aForm--news & {
+    @media (max-width: 411px) {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
+  }
+
   .aMain__search & {
     width: 100%;
     padding: 12.5px 3px !important;
 
-    @media (max-width: 612px) {
+    @media (max-width: 700px) {
       height: 100%;
     }
   }

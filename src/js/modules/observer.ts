@@ -22,9 +22,9 @@ const observer = (selector: string): void => {
             if(!element.classList.contains('aContent__item')) continue
 
             // рендер развернуть новость
-            const $idea: HTMLElement = element.querySelector('.js-idea')
+            const $idea: HTMLElement = element.querySelector('.aNews__content')
 
-            if($idea.scrollHeight > 480) {
+            if($idea.scrollHeight > 210) {
               $idea.insertAdjacentHTML('beforeend', unwrapTemplate())
             }
 
@@ -33,13 +33,17 @@ const observer = (selector: string): void => {
               $comments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('.js-comment')
 
             if($comments.length > 2) {
-              $comments[1].classList.add('aComment--after')
+              $comments[$comments.length - 2].classList.add('aComment--after')
 
-              for (let i = 2; i < $comments.length; i++) {
+              // for (let i = 2; i < $comments.length; i++) {
+              //   $comments[i].style.display = 'none'
+              // }
+
+              for (let i = 0; i < $comments.length - 2; i++) {
                 $comments[i].style.display = 'none'
               }
 
-              $commentsWrapper.insertAdjacentHTML('beforeend', unwrapCommentsTemplate($comments.length - 2))
+              $commentsWrapper.insertAdjacentHTML('afterbegin', unwrapCommentsTemplate($comments.length - 2))
             }
           }
 
@@ -56,12 +60,12 @@ const observer = (selector: string): void => {
   });
 
   // делегирование
-  document.addEventListener('click', (e: MouseEvent): void => {
+  document.querySelector('.aBody').addEventListener('click', (e: MouseEvent): void => {
     const target: HTMLElement = e.target as HTMLElement;
 
     // разворачиваем новость
     if(target && target.classList.contains('js-unwrap-idea')) {
-      const $idea: HTMLElement = target.closest('.js-idea') as HTMLElement;
+      const $idea: HTMLElement = target.closest('.aNews__content') as HTMLElement;
 
       $idea.style.maxHeight = '100%'
 
@@ -88,7 +92,6 @@ const observer = (selector: string): void => {
 
       const $commentsWrapper: HTMLElement = target.closest('.js-comments').querySelector('.aNews__comments-inner'),
         $hideComments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('[style*="none"]')
-
 
       $commentsWrapper.querySelector('.aComment--after')?.classList.remove('aComment--after')
 

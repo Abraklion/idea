@@ -13,6 +13,10 @@
   @media (max-width: 600px) {
     padding: 12px;
   }
+
+  @media (max-width: 411px) {
+    padding: 8px;
+  }
 }
 
 .aNews__header {
@@ -103,11 +107,7 @@
   grid-column-gap: 12px;
 
   @media (max-width: 500px) {
-    padding-right: 20px;
-  }
-
-  @media (max-width: 360px) {
-    padding-right: 12px;
+    padding-right: 10px;
   }
 
   .aNews__header--new &,
@@ -124,7 +124,7 @@
   position: absolute;
   top: 50%;
   right: 120px;
-  z-index: -1;
+  z-index: 0;
 
   background-size: auto;
   background-position: top;
@@ -141,16 +141,16 @@
 
   transform: translateY(-50%);
 
+  @media (max-width: 992px) {
+    z-index: -1;
+  }
+
   @media (max-width: 500px) {
     font-size: 11px;
 
-    right: 11px;
+    right: 0;
 
     padding-top: 52px;
-  }
-
-  @media (max-width: 360px) {
-    right: 3px;
   }
 
   &--lock {
@@ -167,13 +167,13 @@
     transform: none;
 
     @media (max-width: 500px) {
-      top: 8px;
-      right: 10px;
+      top: 0;
+      right: 0;
 
       padding-top: 68px;
 
       & ~ .aBtn--icon {
-        margin-top: 44px;
+        margin-top: 35px;
         margin-bottom: 25px;
       }
     }
@@ -193,13 +193,13 @@
     transform: none;
 
     @media (max-width: 500px) {
-      top: 8px;
-      right: 10px;
+      top: 0;
+      right: 0;
 
       padding-top: 68px;
 
       & ~ .aBtn--icon {
-        margin-top: 44px;
+        margin-top: 35px;
         margin-bottom: 25px;
       }
     }
@@ -214,6 +214,16 @@
   background-size: 15px;
   background-position: center;
   background-repeat: no-repeat;
+
+  transition-duration: 0.1s;
+
+  &.active {
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.2699 16.265L20.9754 12.1852C21.1516 11.1662 20.368 10.2342 19.335 10.2342H14.1539C13.6404 10.2342 13.2494 9.77328 13.3325 9.26598L13.9952 5.22142C14.1028 4.56435 14.0721 3.892 13.9049 3.24752C13.7664 2.71364 13.3545 2.28495 12.8128 2.11093L12.6678 2.06435C12.3404 1.95918 11.9831 1.98365 11.6744 2.13239C11.3347 2.29611 11.0861 2.59473 10.994 2.94989L10.5183 4.78374C10.3669 5.36723 10.1465 5.93045 9.86218 6.46262C9.44683 7.24017 8.80465 7.86246 8.13711 8.43769L6.69838 9.67749C6.29272 10.0271 6.07968 10.5506 6.12584 11.0844L6.93801 20.4771C7.0125 21.3386 7.7328 22 8.59658 22H13.2452C16.7265 22 19.6975 19.5744 20.2699 16.265Z' fill='%231C274C'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2.96767 9.48508C3.36893 9.46777 3.71261 9.76963 3.74721 10.1698L4.71881 21.4063C4.78122 22.1281 4.21268 22.7502 3.48671 22.7502C2.80289 22.7502 2.25 22.1954 2.25 21.5129V10.2344C2.25 9.83275 2.5664 9.5024 2.96767 9.48508Z' fill='%231C274C'/%3E%3C/svg%3E");
+
+    span {
+      opacity: 1;
+    }
+  }
 }
 
 .aNews__status-bell {
@@ -230,7 +240,20 @@
   position: relative;
 
   overflow: hidden;
-  max-height: 480px;
+  max-height: 210px;
+
+  padding: 16px;
+
+  background-color: #fff;
+
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 2px;
+
+  box-shadow: inset 0 0 1px rgba(0,0,0,0.1);
+
+  @media (max-width: 600px) {
+    padding: 12px;
+  }
 }
 
 .aNews__body {
@@ -281,15 +304,32 @@
 }
 
 .aNews__unwrap-comments {
-  margin: -8px 0 10px 56px;
-
-  font-weight: 400;
-  font-size: 12px;
+  margin: 8px 0 -3px 50px;
 
   line-height: 12px;
 
-  a {
+  @media (max-width: 411px) {
+    margin-left: -4px;
+
+  }
+
+  button {
+    background-color: transparent;
+
+    border: none;
+
+    font-weight: 400;
+    font-size: 12px;
+
+    line-height: 12px;
+
     color: rgba(#184A78, 0.8);
+
+    cursor: pointer;
+
+    &:hover{
+      text-decoration: underline;
+    }
   }
 
   span {
@@ -307,10 +347,13 @@
 
   grid-column-gap: 16px;
 
-  padding: 24px 0 0 0;
-  margin: 0 0 8px 0;
+  padding: 14px 0 0 0;
 
   border-top: 1px solid #e6e5e3;
+
+  @media (max-width: 411px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .aNews__new-comment-img {
@@ -320,6 +363,10 @@
   height: 38px;
 
   border-radius: 50%;
+
+  @media (max-width: 411px) {
+    display: none;
+  }
 }
 
 .aNews__new-comment-inner {
@@ -335,6 +382,8 @@
     padding-top: 9px;
     padding-bottom: 9px;
     padding-right: 80px;
+
+    font-size: 13px;
   }
 }
 
@@ -358,15 +407,15 @@
   &::after {
     content: '';
 
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
 
     position: absolute;
     left: 50%;
     top: 50%;
 
     background-image: url("data:image/svg+xml,%3C!-- icon666.com - MILLIONS vector ICONS FREE --%3E%3Csvg id='Capa_1' enable-background='new 0 0 512 512' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath d='m0 301h75.001v30h-75.001z' fill='%2328abfa'/%3E%3Cpath d='m0 181h75.001v30h-75.001z' fill='%2314cfff'/%3E%3Cpath d='m60 30v106l30 71.156 422 48.844z' fill='%23c4f3ff'/%3E%3Cpath d='m60 376v106l452-226-422 35.057z' fill='%238ae7ff'/%3E%3Cpath d='m60 256v120l452-120-422-60z' fill='%234fdbff'/%3E%3Cpath d='m60 136v120h452z' fill='%238ae7ff'/%3E%3Cpath d='m0 271h120v-15l-60-10-60 10z' fill='%2328abfa'/%3E%3Cpath d='m0 241h120v15h-120z' fill='%2314cfff'/%3E%3C/g%3E%3C/svg%3E");    background-position: center;
-    background-size: 20px;
+    background-size: 19px;
     background-repeat: no-repeat;
 
     opacity: 0.7;

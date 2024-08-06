@@ -1,10 +1,10 @@
-<section class="aMain__filter aModal" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
+<section class="aMain__filter aModal aModal--news" id="modal-search" data-sumbiot-overlay="false" data-sumbiot-overflow="false" data-sumbiot-modal="1">
 
   <h2 class="aModal__title">Поиск</h2>
 
   <div class="aModal__inner">
 
-    <form class="aForm" id="form-search" method="POST">
+    <form class="aForm aForm--news" id="form-search" method="POST">
 
       <div class="aForm__inner">
 
@@ -32,10 +32,17 @@
           </select>
         </div><!--./aForm__item-->
 
-        <div class="aForm__item aForm__item--column-6 aForm__item--position-1">
-          <label class="aForm__label" for="date_create">Дата создания</label>
+        <div class="aForm__item aForm__item--column-3 aForm__item--position-1">
+          <label class="aForm__label" for="date_start">Дата от</label>
           <div class="aForm__calendar js-datepicker">
-            <input class="aForm__input js-input" type="text" name="date_create" id="date_create" placeholder="00.00.0000" autocomplete="off">
+            <input class="aForm__input js-input" type="text" name="date_create" id="date_start" placeholder="00.00.0000" autocomplete="off">
+          </div>
+        </div><!--./aForm__item-->
+
+        <div class="aForm__item aForm__item--column-3 aForm__item--position-1">
+          <label class="aForm__label" for="date_end">Дата до</label>
+          <div class="aForm__calendar js-datepicker">
+            <input class="aForm__input js-input" type="text" name="date_create" id="date_end" placeholder="00.00.0000" autocomplete="off">
           </div>
         </div><!--./aForm__item-->
 

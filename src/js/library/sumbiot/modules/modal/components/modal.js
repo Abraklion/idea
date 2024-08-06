@@ -107,7 +107,7 @@ export default class Modal extends ModalCore {
    * @return {void}
    */
   _showHandler() {
-    document.addEventListener('click', (e) => {
+    document.querySelector('.aBody').addEventListener('click', (e) => {
       let target = e.target;
 
       if (target && target.matches(this._trigger) || target && target.parentElement?.matches(this._trigger)) {

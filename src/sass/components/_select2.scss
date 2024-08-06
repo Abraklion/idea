@@ -5,10 +5,18 @@
 
   font-family: "Open-Sans", sans-serif;
   font-size: 15px;
+
+  .aForm--news & {
+    padding: 3px 0;
+  }
 }
 
 .select2-container .select2-selection--single{
   height: 40px;
+
+  .aForm--news & {
+    height: 36px;
+  }
 }
 
 .select2-selection__arrow {
@@ -16,6 +24,10 @@
 
   top: 0 !important;
   right: 8px !important;
+
+  .aForm--news & {
+    height: 36px !important;
+  }
 }
 
 .select2-selection__rendered {

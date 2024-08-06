@@ -10,6 +10,8 @@ const burger = (burgerSelector: string, {
   const $burger: HTMLElement = document.querySelector(burgerSelector)
 
   $burger.addEventListener("click", (e) => {
+    console.log(12)
+
     modals.forEach(modal => modal.close())
 
     $burger.classList.toggle("aBurger--active")

@@ -11,7 +11,7 @@ const tabs = (parentSelector: string, tabSelector: string, contentSelector: stri
    *
    */
 
-  document.addEventListener('click', (e: MouseEvent): void => {
+  document.querySelector('.aBody').addEventListener('click', (e: MouseEvent): void => {
     const target : HTMLElement = e.target as HTMLElement;
 
     if(target && target.classList.contains(tabSelector.replace(/\./, "")) || target && target.parentElement?.classList.contains(tabSelector.replace(/\./, ""))) {
