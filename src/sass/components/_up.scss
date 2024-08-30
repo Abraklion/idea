@@ -1,0 +1,55 @@
+.up {
+  display: none;
+}
+
+@media (min-width: 1351px) {
+  .up {
+    display: block;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    position: fixed;
+
+    right: 48px;
+    bottom: 32px;
+
+    transition: visibility 0.3s, opacity 0.3s;
+
+    &--active {
+      visibility: visible;
+
+      opacity: 1;
+    }
+  }
+
+  .up__button {
+    display: block;
+    width: 26px;
+    height: 26px;
+
+    background-color: #021e43;
+    background-image: url("data:image/svg+xml,%3Csvg width='88' height='88' viewBox='0 0 88 88' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1674_4)'%3E%3Cpath d='M83.9999 68.0002C82.9769 68.0002 81.9529 67.6093 81.1719 66.8283L43.9999 29.6562L6.82787 66.8283C5.26487 68.3913 2.73388 68.3913 1.17188 66.8283C-0.390125 65.2653 -0.391125 62.7342 1.17188 61.1722L41.1719 21.1723C42.7349 19.6093 45.2659 19.6093 46.8279 21.1723L86.8279 61.1722C88.3909 62.7352 88.3909 65.2663 86.8279 66.8283C86.0469 67.6093 85.0229 68.0002 83.9999 68.0002Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1674_4'%3E%3Crect width='88' height='88' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+
+    border: 1px solid #fff;
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    opacity: 0.5;
+
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

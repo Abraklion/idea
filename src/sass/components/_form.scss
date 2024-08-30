@@ -61,6 +61,7 @@
 
     font-weight: 500;
     font-size: 15px;
+    outline: 0;
 
     resize: none;
 
@@ -69,7 +70,7 @@
     box-shadow: none;
     border-radius: 2px;
 
-    &:focus{
+    &:focus {
       box-shadow: none;
 
       border-color: #0a5294;
@@ -103,6 +104,8 @@
   }
 
   .aForm--news & {
+    grid-row-gap: 20px;
+
     @media (max-width: 411px) {
       grid-row-gap: 12px;
     }

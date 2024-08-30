@@ -20,7 +20,7 @@
 
   align-items: center;
 
-  padding: 15px 16px;
+  padding: 12px;
   margin-bottom: 16px;
 
   background-color: rgba(#54A3ED, 0.03);
@@ -37,6 +37,8 @@
   @media (max-width: 411px) {
     padding-left: 8px;
     padding-right: 8px;
+
+    margin-bottom: 12px;
   }
 }
 
@@ -65,11 +67,11 @@
       width: calc(100vw - 28px);
 
       position: absolute;
-      top: calc(100% + 32px);
+      top: calc(100% + 25px);
       left: -13px;
       z-index: 11;
 
-      padding: 24px 16px;
+      padding: 16px 12px;
 
       background-color: #fbfcfe;
 
@@ -88,6 +90,8 @@
 
     @media (max-width: 411px) {
       width: calc(100vw - 16px);
+      top: calc(100% + 21px);
+      left: -9px;
     }
 
     .aOptions__item {

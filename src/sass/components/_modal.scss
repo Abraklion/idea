@@ -31,12 +31,19 @@
   }
 
   &--news {
-    @media (max-width: 600px) {
-      padding: 12px 12px 26px 12px;
-    }
+    padding: 12px 12px 26px 12px;
 
     @media (max-width: 411px) {
       padding: 8px 8px 16px 8px;
+
+      margin-top: 12px;
+      margin-bottom: 24px;
+    }
+
+    &::after {
+      @media (max-width: 411px) {
+        bottom: -13px;
+      }
     }
 
   }
@@ -107,10 +114,7 @@
   }
 
   .aModal--news & {
-
-    @media (max-width: 600px) {
-      top: 11px;
-    }
+    top: 11px;
 
     @media (max-width: 411px) {
       top: 7px;

@@ -38,6 +38,22 @@
   @media (max-width: 345px) {
     font-size: 23px;
   }
+
+  &--news {
+    color: #222222;
+
+    margin-bottom: 0 !important;
+
+    @media (max-width: 992px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    @media (max-width: 576px) {
+      justify-content: center;
+    }
+  }
 }
 
 .aTitle__slogan {

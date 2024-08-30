@@ -16,5 +16,11 @@
 }
 
 .aMain__content {
+  position: relative;
+
   margin: 16px 0 0 0;
+
+  @media (max-width: 411px) {
+    margin-top: 12px;
+  }
 }

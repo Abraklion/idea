@@ -65,6 +65,8 @@ const select2 = () => {
   // сбросить селект
   document.querySelector('#form-search').addEventListener('reset', (e) => {
     $('.js-select2').val(-1).trigger('change')
+
+    $('.js-select2-elma').val(-1).trigger('change')
   })
 }
 

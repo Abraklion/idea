@@ -24,7 +24,7 @@ const observer = (selector: string): void => {
             // рендер развернуть новость
             const $idea: HTMLElement = element.querySelector('.aNews__content')
 
-            if($idea.scrollHeight > 210) {
+            if($idea.scrollHeight > 199) {
               $idea.insertAdjacentHTML('beforeend', unwrapTemplate())
             }
 
@@ -32,19 +32,28 @@ const observer = (selector: string): void => {
             const $commentsWrapper: HTMLElement = element.querySelector('.js-comments'),
               $comments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('.js-comment')
 
-            if($comments.length > 2) {
-              $comments[$comments.length - 2].classList.add('aComment--after')
+            if($comments.length > 1) {
 
-              // for (let i = 2; i < $comments.length; i++) {
-              //   $comments[i].style.display = 'none'
-              // }
+              $comments[$comments.length - 1].classList.add('aComment--after')
 
-              for (let i = 0; i < $comments.length - 2; i++) {
+              for (let i = 0; i < $comments.length - 1; i++) {
                 $comments[i].style.display = 'none'
               }
 
-              $commentsWrapper.insertAdjacentHTML('afterbegin', unwrapCommentsTemplate($comments.length - 2))
+              $commentsWrapper.insertAdjacentHTML('afterbegin', unwrapCommentsTemplate($comments.length - 1))
             }
+
+            // рендер видео новости
+            const $video: NodeListOf<HTMLElement> = element.querySelectorAll('oembed[url]')
+
+            $video.forEach(video => {
+              const anchor = document.createElement( 'a' )
+
+              anchor.setAttribute( 'href', video.getAttribute( 'url' ) )
+              anchor.className = 'embedly-card'
+
+              video.appendChild( anchor )
+            })
           }
 
         break;
@@ -65,11 +74,18 @@ const observer = (selector: string): void => {
 
     // разворачиваем новость
     if(target && target.classList.contains('js-unwrap-idea')) {
-      const $idea: HTMLElement = target.closest('.aNews__content') as HTMLElement;
+      const $idea: HTMLElement = target.closest('.aNews__content') as HTMLElement,
+            $unwrap: HTMLElement = target.closest('.aUnwrap')
 
-      $idea.style.maxHeight = '100%'
+      if(!$unwrap.classList.contains('active')) {
+        $unwrap.classList.add('active')
 
-      target.parentElement.remove()
+        $idea.style.maxHeight = $idea.scrollHeight + 10 + 'px'
+      } else {
+        $unwrap.classList.remove('active')
+
+        $idea.style.maxHeight = '199px'
+      }
     }
 
     // скрыть комментарии
@@ -91,17 +107,26 @@ const observer = (selector: string): void => {
       e.preventDefault()
 
       const $commentsWrapper: HTMLElement = target.closest('.js-comments').querySelector('.aNews__comments-inner'),
-        $hideComments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('[style*="none"]')
+        $hideComments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('[style*="none"]'),
+        $allComments: NodeListOf<HTMLElement> = $commentsWrapper.querySelectorAll('.js-comment')
 
       $commentsWrapper.querySelector('.aComment--after')?.classList.remove('aComment--after')
 
-      if($hideComments.length > 2) {
+      if($hideComments.length === $allComments.length) {
 
-        for (let i = 0; i < 2; i++) {
+        $hideComments[$hideComments.length - 1].style.display = 'flex'
+
+        $hideComments[$hideComments.length - 1].classList.add('aComment--after')
+
+        target.querySelector('span').innerHTML = `${$hideComments.length - 1}`
+
+      } else if ($hideComments.length > 2) {
+
+        for (let i = $hideComments.length - 1; i > $hideComments.length - 3; i--) {
           $hideComments[i].style.display = 'flex'
         }
 
-        $hideComments[1].classList.add('aComment--after')
+        $hideComments[$hideComments.length - 2].classList.add('aComment--after')
 
         target.querySelector('span').innerHTML = `${$hideComments.length - 2}`
 
@@ -115,6 +140,20 @@ const observer = (selector: string): void => {
         target.classList.add('js-comments-hide')
       }
 
+    }
+
+    // разворачиваем добавить комментарий
+    if(target && target.classList.contains('js-textarea-add-comment')) {
+
+      target.closest('.aNews__new-comment-inner').classList.add('active')
+    }
+
+    // сварачиваем добавить комментарий
+    if(target && target.classList.contains('js-reset-add-comment')) {
+
+      target.closest('.aNews__new-comment-inner').classList.remove('active');
+
+      (target.closest('.js-form-add-comment') as HTMLFormElement).reset()
     }
 
   })

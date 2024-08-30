@@ -1,24 +1,25 @@
 @charset "UTF-8";
 
 // Шрифты
-@use "fonts";
+//@use "fonts";
 
 // Нормализация css
-@use "normalize";
+//@use "normalize";
 
 // Анимации
-@use 'animations';
+//@use 'animations';
 
 // Базовые настройки
-@use "core";
+//@use "core";
 
 // Служебные класы
 @use "service";
 
 // Блоки
-//@use "components/loader";
+@use "components/loader";
 @use "components/body";
 @use "components/button";
+@use "components/logo";
 @use "components/burger";
 @use "components/modal";
 @use "components/form";
@@ -26,8 +27,10 @@
 @use "components/datepicker";
 @use "components/select2";
 @use "components/plug";
+@use "components/up";
+@use "components/bread-crumbs";
 
-@use "components/skeleton";
+//@use "components/skeleton";
 @use "components/title";
 @use "components/frame";
 @use "components/main";

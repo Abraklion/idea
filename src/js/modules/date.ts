@@ -54,7 +54,9 @@ const date = () => {
     document.querySelector('.aBody').addEventListener('click', function(e: MouseEvent){
       const target: HTMLElement = e.target as HTMLElement;
 
-      if(!(target && target.closest('.ui-datepicker-inline') || target && target.closest('.js-input') )){
+      if(!(target && target.closest('.ui-datepicker-inline')
+          || target && target.closest('.js-input')
+          || target && target.closest('.ui-corner-all'))){
         $calendar.hide()
       }
     })

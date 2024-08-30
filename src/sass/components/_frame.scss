@@ -1,6 +1,7 @@
 
 .aFrame {
   max-width: 1850px;
+  min-height: calc(100% - 50px);
 
   display: grid;
   grid-template-columns: 1fr 258px;

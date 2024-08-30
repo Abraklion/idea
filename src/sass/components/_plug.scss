@@ -42,4 +42,14 @@
   &.block {
     display: block;
   }
+
+  &.style {
+    padding: 12px 0;
+
+    background-color: rgba(255, 237, 209, .05);
+
+    border: 1px solid rgba(#000, 0.04);
+
+    text-align: center;
+  }
 }

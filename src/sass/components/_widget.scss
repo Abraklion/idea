@@ -4,11 +4,20 @@
   display: flex;
   flex-direction: column;
 
+  @media (max-width: 1350px) {
+    margin-top: 32px;
+  }
 
   hr {
     margin: 16px 0;
     border: 1px solid rgba(0,0,0,.03);
     border-top: none;
+  }
+
+  .aBody--news & {
+    @media (max-width: 411px) {
+      display: none;
+    }
   }
 }
 
@@ -16,7 +25,7 @@
   user-select: v.$select;
 
   margin: 0;
-  padding: 22.5px 16px;
+  padding: 19.5px 16px;
 
   background-color: rgba(#54A3ED, 0.03);
 

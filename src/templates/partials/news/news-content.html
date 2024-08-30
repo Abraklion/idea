@@ -1,6 +1,15 @@
 <section class="aMain__content aContent js-observer">
   <h2 class="visually-hidden">Список новостей</h2>
 
+  <ul class="aBread-crumbs js-bread-crumbs">
+    <li class="aBread-crumbs__item">
+      <a class="aBread-crumbs_link js-index">Главная</a>
+    </li>
+    <li class="aBread-crumbs__item">
+      <span class="aBread-crumbs_link active">Мои новости</span>
+    </li>
+  </ul><!--./aBread-crumbs-->
+
   <ul class="aContent__inner" id="aContent">
 
     <li class="aContent__item">
@@ -10,33 +19,33 @@
 
     </li><!--./aContent__item-->
 
-<!--    <li class="aContent__item">-->
+    <li class="aContent__item">
 
-<!--      &lt;!&ndash; Новость &ndash;&gt;-->
+      <!-- Новость -->
+      {{> news}}
 
+    </li><!--./aContent__item-->
 
-<!--    </li>&lt;!&ndash;./aContent__item&ndash;&gt;-->
+    <li class="aContent__item">
 
-<!--    <li class="aContent__item">-->
+      <!-- Новость -->
+      {{> news}}
 
-<!--      &lt;!&ndash; Новость &ndash;&gt;-->
+    </li><!--./aContent__item-->
 
+    <li class="aContent__item">
 
-<!--    </li>&lt;!&ndash;./aContent__item&ndash;&gt;-->
+      <!-- Новость -->
+      {{> news}}
 
-<!--    <li class="aContent__item">-->
+    </li><!--./aContent__item-->
 
-<!--      &lt;!&ndash; Новость &ndash;&gt;-->
+    <li class="aContent__item">
 
+      <!-- Идея -->
+      {{> news}}
 
-<!--    </li>&lt;!&ndash;./aContent__item&ndash;&gt;-->
-
-<!--    <li class="aContent__item">-->
-
-<!--      &lt;!&ndash; Идея &ndash;&gt;-->
-
-
-<!--    </li>&lt;!&ndash;./aContent__item&ndash;&gt;-->
+    </li><!--./aContent__item-->
 
   </ul><!--./aContent__list-->
 

@@ -8,8 +8,6 @@ import select2 from "./modules/select2-news";
 import burger from "./modules/burger";
 import observer from "./modules/observer";
 
-import TestIndexNews from "./components/test-index-news";
-
 import VisitorPattern from "./components/visitor.pattern";
 
 
@@ -33,8 +31,5 @@ $(document).ready(function(){
 
   // Кастомный выпадающий список
   observer('.js-observer')
-
-  new TestIndexNews('#aContent').init()
-
 
 })
